@@ -71,7 +71,8 @@ function FlipCard({ src, index, target }: FlipCardProps) {
 }
 
 const TOTAL_IMAGES = 20;
-const MAX_SCROLL = 3000;
+const MOBILE_IMAGES = 12;
+const MAX_SCROLL = 1200;
 
 const IMAGES = [
     "/assets/images/hero/audio horizontale.webp",
@@ -151,14 +152,17 @@ export default function ScrollMorphHero({
             virtualScroll.set(newScroll);
         };
 
+        const isMobileDevice = window.innerWidth < 768;
         let touchStartY = 0;
         const handleTouchStart = (e: TouchEvent) => {
             touchStartY = e.touches[0].clientY;
         };
         const handleTouchMove = (e: TouchEvent) => {
             const touchY = e.touches[0].clientY;
-            const deltaY = touchStartY - touchY;
+            const rawDelta = touchStartY - touchY;
             touchStartY = touchY;
+            // Amplify swipe sensitivity on mobile so 1-2 swipes complete the animation
+            const deltaY = isMobileDevice ? rawDelta * 3 : rawDelta;
 
             if ((scrollRef.current === 0 && deltaY < 0) || (scrollRef.current === MAX_SCROLL && deltaY > 0)) {
                 return;
@@ -184,7 +188,7 @@ export default function ScrollMorphHero({
     const morphProgress = useTransform(virtualScroll, [0, 600], [0, 1]);
     const smoothMorph = useSpring(morphProgress, { stiffness: 40, damping: 20 });
 
-    const scrollRotate = useTransform(virtualScroll, [600, 3000], [0, 360]);
+    const scrollRotate = useTransform(virtualScroll, [600, MAX_SCROLL], [0, 360]);
     const smoothScrollRotate = useSpring(scrollRotate, { stiffness: 40, damping: 20 });
 
     const mouseX = useMotionValue(0);
@@ -283,7 +287,7 @@ export default function ScrollMorphHero({
                 </motion.div>
 
                 <div className="relative flex items-center justify-center w-full h-full">
-                    {IMAGES.slice(0, TOTAL_IMAGES).map((src, i) => {
+                    {IMAGES.slice(0, containerSize.width < 768 ? MOBILE_IMAGES : TOTAL_IMAGES).map((src, i) => {
                         let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
 
                         if (introPhase === "scatter") {
