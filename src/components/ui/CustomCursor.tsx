@@ -3,14 +3,21 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export const CustomCursor = () => {
     const [isHovering, setIsHovering] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
+
+    useEffect(() => {
+        setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches);
+    }, []);
 
     const springConfig = { damping: 25, stiffness: 700 };
     const cursorXSpring = useSpring(cursorX, springConfig);
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
+        if (isTouchDevice) return;
+
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX - 16);
             cursorY.set(e.clientY - 16);
@@ -39,6 +46,8 @@ export const CustomCursor = () => {
 
     // Re-bind listeners on DOM mutation (for dynamic content)
     useEffect(() => {
+        if (isTouchDevice) return;
+
         const observer = new MutationObserver(() => {
             const buttons = document.querySelectorAll('button, a, input, .cursor-pointer');
             const handleMouseEnter = () => setIsHovering(true);
@@ -54,9 +63,11 @@ export const CustomCursor = () => {
         return () => observer.disconnect();
     }, []);
 
+    if (isTouchDevice) return null;
+
     return (
         <motion.div
-            className="fixed top-0 left-0 w-8 h-8 border border-gold-500 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+            className="fixed top-0 left-0 w-8 h-8 border border-gold-500 rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block"
             style={{
                 translateX: cursorXSpring,
                 translateY: cursorYSpring,

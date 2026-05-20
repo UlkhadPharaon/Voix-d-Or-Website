@@ -103,7 +103,7 @@ export function Web3MediaHero({
                     {children}
                 </div>
             ) : (
-                <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-20 md:py-32">
+                <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-12 md:py-32 mt-12 md:mt-0">
                     {/* Floating Icons */}
                     {cryptoIcons.map((crypto, index) => (
                         <motion.div
@@ -155,7 +155,7 @@ export function Web3MediaHero({
                         </motion.div>
 
                         {/* Title */}
-                        <h1 className="font-monument font-medium text-4xl md:text-6xl lg:text-7xl leading-[1.1] text-white tracking-tight">
+                        <h1 className="font-monument font-medium text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] text-white tracking-tight">
                             {title}
                             <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-champagne-gold via-white to-champagne-gold font-bold">
@@ -164,7 +164,7 @@ export function Web3MediaHero({
                         </h1>
 
                         {/* Subtitle */}
-                        <p className="font-satoshi text-white/80 text-base md:text-lg max-w-xl leading-relaxed">
+                        <p className="font-satoshi text-white/80 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
                             {subtitle}
                         </p>
 

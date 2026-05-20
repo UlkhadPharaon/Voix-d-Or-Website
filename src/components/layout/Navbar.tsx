@@ -132,21 +132,21 @@ export const Navbar = () => {
                     >
                         <div className="absolute inset-0 faso-pattern opacity-10 pointer-events-none"></div>
 
-                        <nav className="flex flex-col items-center gap-6 relative z-10 text-center">
-                            <NavLink to="/" className="text-2xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>ACCUEIL</NavLink>
-                            <NavLink to="/services" className="text-2xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>SERVICES</NavLink>
-                            <NavLink to="/cinematic-launch" className="text-2xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LE CINEMATIC LAUNCH™</NavLink>
-                            <NavLink to="/portfolio" className="text-2xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LA GALERIE</NavLink>
-                            <NavLink to="/about" className="text-2xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LE MANIFESTE</NavLink>
-                            <NavLink to="/contact" className="text-2xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LE PACTE</NavLink>
-                            <hr className="w-12 border-white/10 my-2" />
-                            <NavLink to="/services?cat=tv" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>SPOT PUBLICITAIRE</NavLink>
-                            <NavLink to="/services?cat=clip" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>CLIP VIDÉOS</NavLink>
-                            <NavLink to="/services?cat=prod" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>PRODUCTION VIDÉOS</NavLink>
-                            <NavLink to="/services?cat=post" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>POST PRODUCTION</NavLink>
-                            <NavLink to="/services?cat=audio" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>AUDIO</NavLink>
-                            <NavLink to="/musique-de-film" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>MUSIQUE DE FILM</NavLink>
-                            <NavLink to="/formation" className="text-xl font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>FORMATION</NavLink>
+                        <nav className="flex flex-col items-center gap-3 sm:gap-4 relative z-10 text-center overflow-y-auto max-h-screen w-full py-20 px-4">
+                            <NavLink to="/" className="text-lg sm:text-xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>ACCUEIL</NavLink>
+                            <NavLink to="/services" className="text-lg sm:text-xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>SERVICES</NavLink>
+                            <NavLink to="/cinematic-launch" className="text-lg sm:text-xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LE CINEMATIC LAUNCH™</NavLink>
+                            <NavLink to="/portfolio" className="text-lg sm:text-xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LA GALERIE</NavLink>
+                            <NavLink to="/about" className="text-lg sm:text-xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LE MANIFESTE</NavLink>
+                            <NavLink to="/contact" className="text-lg sm:text-xl font-monument text-white hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>LE PACTE</NavLink>
+                            <hr className="w-12 border-white/10 my-1 sm:my-2" />
+                            <NavLink to="/services?cat=tv" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>SPOT PUBLICITAIRE</NavLink>
+                            <NavLink to="/services?cat=clip" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>CLIP VIDÉOS</NavLink>
+                            <NavLink to="/services?cat=prod" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>PRODUCTION VIDÉOS</NavLink>
+                            <NavLink to="/services?cat=post" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>POST PRODUCTION</NavLink>
+                            <NavLink to="/services?cat=audio" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>AUDIO</NavLink>
+                            <NavLink to="/musique-de-film" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>MUSIQUE DE FILM</NavLink>
+                            <NavLink to="/formation" className="text-sm sm:text-base font-monument text-white/70 hover:text-champagne-gold transition-colors" onClick={() => setIsMobileOpen(false)}>FORMATION</NavLink>
                         </nav>
                     </motion.div>
                 )}
