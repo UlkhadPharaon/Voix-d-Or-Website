@@ -52,10 +52,6 @@ Tu incarnes le "Pan-Africanisme Futuriste". Tu t'adresses aux clients (réalisat
 - Clôture les échanges prometteurs par : "Je vous invite à initier le projet. Scellez notre collaboration ici : /le-pacte".`;
 
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '');
-const model = genAI.getGenerativeModel({
-    model: "gemini-3-flash-preview",
-    systemInstruction: SYSTEM_PROMPT
-});
 
 interface Message {
     role: 'user' | 'model';
