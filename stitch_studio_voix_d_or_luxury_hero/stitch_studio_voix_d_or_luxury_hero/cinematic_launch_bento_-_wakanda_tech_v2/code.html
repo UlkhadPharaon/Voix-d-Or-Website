@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cinematic Launch - Studio VOIX D'OR</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4AF37", // Champagne Gold
+                        "primary-dark": "#AA8C2C",
+                        "background-light": "#F5F5F0",
+                        "background-dark": "#050505",
+                        "card-dark": "#0A0A0A",
+                        "card-light": "#FFFFFF",
+                        "text-gold": "#E5C558",
+                    },
+                    fontFamily: {
+                        display: ["Cinzel", "serif"],
+                        serif: ["Playfair Display", "serif"],
+                        sans: ["Manrope", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'subtle-pattern': "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')", // Abstract subtle pattern
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(212, 175, 55, 0.15)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>.cinematic-grain {
+            position: relative;
+        }
+        .cinematic-grain::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .gold-text-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .faso-pattern {background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 10px);
+        }html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+<header class="fixed w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center">
+<span class="material-icons text-primary text-4xl transform -rotate-12">movie_filter</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display font-bold text-lg tracking-widest text-gray-900 dark:text-white leading-none">STUDIO</span>
+<span class="font-sans text-[0.6rem] tracking-[0.2em] text-primary uppercase">Voix D'Or</span>
+</div>
+</div>
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="text-xs font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">L'Excellence</a>
+<a class="text-xs font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">La Signature</a>
+<a class="text-xs font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Collection Privée</a>
+<a class="text-xs font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Échos</a>
+<a class="text-xs font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Audit Précieux</a>
+</nav>
+<div class="hidden md:flex items-center">
+<a class="border border-primary text-primary hover:bg-primary hover:text-black dark:hover:text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300" href="#">
+                        Start Project
+                    </a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-gray-600 dark:text-gray-300 hover:text-primary">
+<span class="material-icons">menu</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+</header>
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden cinematic-grain">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-radial from-gray-200/50 to-transparent dark:from-white/5 dark:to-transparent opacity-30 transform scale-150"></div>
+<div class="absolute inset-0 faso-pattern opacity-10"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+<div class="mb-6 flex justify-center items-center gap-2">
+<div class="h-[1px] w-12 bg-primary"></div>
+<span class="text-xs tracking-[0.3em] text-primary uppercase font-medium">Cinematic Launch ™</span>
+<div class="h-[1px] w-12 bg-primary"></div>
+</div>
+<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight text-gray-900 dark:text-white mb-8">
+                L'ART D'INCARNER<br/>
+<span class="italic font-light">L'EXCEPTION.</span>
+</h1>
+<p class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-primary mb-12 gold-text-gradient">
+                Au Delà Des Tendances.
+            </p>
+<p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 font-light text-lg leading-relaxed mb-16">
+                Nous sculptons l'héritage visuel des marques qui façonnent l'avenir. Une fusion entre le raffinement cinématographique et l'innovation digitale.
+            </p>
+<a class="inline-block border border-gray-400 dark:border-white/20 px-10 py-4 text-sm tracking-[0.2em] uppercase text-gray-900 dark:text-white hover:border-primary hover:text-primary transition-all duration-300" href="#features">
+                Révéler Votre Potentiel
+            </a>
+<div class="mt-20 animate-bounce">
+<span class="material-icons text-primary/50">arrow_downward</span>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gray-50 dark:bg-[#080808] relative" id="features">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="text-xs font-bold tracking-[0.2em] text-primary uppercase">Votre Héritage</span>
+<h2 class="mt-4 font-serif text-3xl md:text-5xl text-gray-900 dark:text-white">
+                    La Signature <span class="italic font-light">Cinematic Launch™</span>
+</h2>
+<p class="mt-6 text-gray-600 dark:text-gray-400 italic max-w-2xl mx-auto">
+                    "Bien plus qu'une production, un <span class="text-gray-900 dark:text-white font-semibold">actif immatériel</span>. Nous fusionnons l'artisanat du cinéma et la puissance du numérique pour sculpter votre légende."
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(250px,auto)]">
+<div class="md:col-span-8 relative group overflow-hidden border border-gray-200 dark:border-primary/20 bg-card-light dark:bg-card-dark rounded-sm shadow-lg dark:shadow-none hover:border-primary/50 transition-colors duration-500">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 z-10"></div>
+<img alt="Cinematography Setup" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale-[30%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1KI6AvoCAHboCs8ITTKEwrxMcagU7nq4n4vzofAamKqjYycY9ltNDYDzPCt7Jwh7QmDtYQlgfF-vaswol9jmWrCBRclo4JeATYeiJljIToeVG8h5aE-J5nKN5Uwzo98sdbOECNKhjHnr1QUXaeI2k6VqYyGjt3kLCcNBU6vJoMuyWGT3bWQmRCJN7QuYJcHCepVW0lBDGM9-NZEEZRET6Mb-69BMOMu2IQwlodJpieZbrP_0AnPYCF-SxsZeCpUi2tOG9psn2sjQW"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 max-w-lg">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-icons text-primary text-2xl">movie</span>
+<h3 class="text-xl font-display font-bold text-white tracking-wider uppercase">Le Film Signature (45-90s)</h3>
+</div>
+<p class="text-gray-200 font-light text-sm leading-relaxed border-l-2 border-primary pl-4">
+                            Une œuvre cinématographique intemporelle. Étalonnage, colorimétrie et montage conçus pour susciter l'émotion pure.
+                        </p>
+</div>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
+<span class="material-icons text-white text-3xl">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 relative group p-8 border border-gray-200 dark:border-primary/20 bg-card-light dark:bg-card-dark rounded-sm flex flex-col justify-between hover:border-primary/50 transition-colors duration-500">
+<div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none" style="background-image: radial-gradient(#D4AF37 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div>
+<div class="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center mb-6 text-primary">
+<span class="material-icons">smartphone</span>
+</div>
+<h3 class="text-lg font-display font-bold text-gray-900 dark:text-white tracking-wider uppercase mb-4">La Suite Sociale (9:16)</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed">
+                            L'art de la présence verticale. Des déclinaisons esthétiques pour Instagram et TikTok, sans compromis sur l'élégance.
+                        </p>
+</div>
+<div class="mt-8 relative h-40 w-full overflow-hidden rounded-sm border border-gray-200 dark:border-white/5">
+<div class="absolute inset-0 bg-gray-900">
+<img alt="Social Media vertical frame" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIijXi16wzrFN5ZbvWd7GFxCYy6tVfStTGv5kKr--GUDG4m7pPGsz7uIYn-oYC-Ehu6tuhwy3elHDx66HRpkM5_NUErqhZ4mGHRUSiMOQrWqfAfhWmMoRuVI52YiIXfxr-bAdvP0G_dPBPZ0979-LbDolbMZptH0r4SMLZoGw9QL3ALXNqd9feQiVmqHDTYqDrDOcjpIxQu5vI8izzMYQX_iIxCEQfVOocZ2ECJJug4C2pqX0hwP_F6MwJLrvTxLowiz_y_xDVGz9l"/>
+</div>
+<div class="absolute bottom-2 right-2 text-[10px] text-primary tracking-widest">FORMAT 9:16</div>
+</div>
+</div>
+<div class="md:col-span-4 p-8 border border-gray-200 dark:border-primary/20 bg-card-light dark:bg-card-dark rounded-sm hover:shadow-glow transition-all duration-500 group">
+<div class="w-12 h-12 mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons text-4xl">history_edu</span>
+</div>
+<h3 class="text-lg font-display font-bold text-gray-900 dark:text-white tracking-wider uppercase mb-3 group-hover:text-primary transition-colors">Direction Artistique</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed">
+                        Nous ne créons pas seulement des images, mais des univers. Scripting émotionnel et cohérence visuelle absolue.
+                    </p>
+</div>
+<div class="md:col-span-5 relative overflow-hidden p-8 border border-gray-200 dark:border-primary/20 bg-gray-900 rounded-sm">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-primary/10"></div>
+<div class="absolute inset-0" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 2px, 3px 100%;"></div>
+<div class="relative z-10 h-full flex flex-col justify-center">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-display font-bold text-white tracking-wider uppercase">Hybridation Réel + IA</h3>
+<span class="material-icons text-blue-400 animate-pulse">data_usage</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="text-[10px] text-blue-300 w-12 font-mono">RENDU</span>
+<div class="flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 w-[85%] shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+</div>
+<span class="text-[10px] text-white font-mono">85%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] text-primary w-12 font-mono">LUXE</span>
+<div class="flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%] shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
+</div>
+<span class="text-[10px] text-white font-mono">98%</span>
+</div>
+</div>
+<p class="mt-6 text-gray-300 text-xs font-mono border-t border-white/10 pt-4">
+<span class="text-primary">&gt;_</span> Intégration transparente d'assets génératifs pour sublimer le réel.
+                        </p>
+</div>
+</div>
+<div class="md:col-span-3 p-8 border border-gray-200 dark:border-primary/20 bg-card-light dark:bg-card-dark rounded-sm hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="w-12 h-12 mb-6 text-primary flex items-center">
+<span class="material-icons text-3xl">graphic_eq</span>
+</div>
+<h3 class="text-lg font-display font-bold text-gray-900 dark:text-white tracking-wider uppercase mb-3">Design Sonore</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed">
+                        L'élégance s'écoute aussi. Une composition sonore immersive et des voix-off d'une distinction rare.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden">
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-white/5 transform -translate-x-1/2"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-20">
+<h2 class="font-serif text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">L'Art de la Différence</h2>
+<div class="w-24 h-px bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="group">
+<div class="w-20 h-20 mx-auto mb-6 rounded-full border border-gray-300 dark:border-white/10 flex items-center justify-center group-hover:border-primary transition-colors duration-500">
+<span class="material-icons text-3xl text-gray-400 group-hover:text-primary transition-colors">memory</span>
+</div>
+<h3 class="text-sm font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white mb-2">Innovation Invisible</h3>
+<div class="w-8 h-px bg-primary mx-auto mb-4 opacity-50"></div>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed px-4">
+                        L'IA et la 3D subliment le réel avec une discrétion absolue pour un rendu magique.
+                    </p>
+</div>
+<div class="group">
+<div class="w-20 h-20 mx-auto mb-6 rounded-full border border-gray-300 dark:border-white/10 flex items-center justify-center group-hover:border-primary transition-colors duration-500">
+<span class="material-icons text-3xl text-gray-400 group-hover:text-primary transition-colors">trending_up</span>
+</div>
+<h3 class="text-sm font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white mb-2">Résonance</h3>
+<div class="w-8 h-px bg-primary mx-auto mb-4 opacity-50"></div>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed px-4">
+                        L'art doit servir un but. Chaque plan est conçu pour marquer les esprits et inviter à l'action.
+                    </p>
+</div>
+<div class="group">
+<div class="w-20 h-20 mx-auto mb-6 rounded-full border border-gray-300 dark:border-white/10 flex items-center justify-center group-hover:border-primary transition-colors duration-500">
+<span class="material-icons text-3xl text-gray-400 group-hover:text-primary transition-colors">public</span>
+</div>
+<h3 class="text-sm font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white mb-2">Pan-Africanisme Futuriste</h3>
+<div class="w-8 h-px bg-primary mx-auto mb-4 opacity-50"></div>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed px-4">
+                        Une esthétique fière, ancrée à Ouagadougou, qui dialogue avec les capitales du monde.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gray-50 dark:bg-[#080808] border-t border-gray-200 dark:border-white/5">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-serif text-3xl md:text-4xl text-gray-900 dark:text-white mb-2">L'Expertise Validée</h2>
+<p class="text-[10px] tracking-[0.2em] font-bold text-primary uppercase">Validé par nos partenaires de production</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-[#0C0C0C] p-10 border border-gray-100 dark:border-white/5 rounded-sm shadow-sm relative">
+<span class="absolute top-8 left-8 text-6xl font-serif text-gray-200 dark:text-white/5 leading-none">“</span>
+<p class="relative z-10 text-gray-600 dark:text-gray-300 italic font-serif text-lg leading-relaxed mb-8">
+                        Une rigueur technique qui frôle l'obsession. Le Cinematic Launch n'est pas un service vidéo, c'est une arme de conversion massive.
+                    </p>
+<div class="relative z-10 border-t border-gray-100 dark:border-white/10 pt-4">
+<p class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider">Agence Kemet Lux</p>
+<p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Direction Artistique</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#0C0C0C] p-10 border border-gray-100 dark:border-white/5 rounded-sm shadow-sm relative">
+<span class="absolute top-8 left-8 text-6xl font-serif text-gray-200 dark:text-white/5 leading-none">“</span>
+<p class="relative z-10 text-gray-600 dark:text-gray-300 italic font-serif text-lg leading-relaxed mb-8">
+                        Nous avons vu un 'avant' et un 'après' immédiat dans la perception de nos investisseurs. Studio VOIX D'OR comprend le langage du pouvoir.
+                    </p>
+<div class="relative z-10 border-t border-gray-100 dark:border-white/10 pt-4">
+<p class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider">Moussa Diop</p>
+<p class="text-xs text-gray-500 uppercase tracking-widest mt-1">CEO, Sahel Ventures</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-16">
+<div class="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-[10px] tracking-widest uppercase">
+<span class="material-icons text-sm">auto_awesome</span>
+                    Technologie Google AI Studio
+                </div>
+</div>
+</div>
+</section>
+<footer class="bg-background-light dark:bg-background-dark py-12 border-t border-gray-200 dark:border-white/5">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<div class="flex items-center justify-center gap-2 mb-4 opacity-50">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<span class="material-icons text-gray-400 dark:text-white text-xl">movie_filter</span>
+</div>
+<span class="font-display font-bold text-sm tracking-widest text-gray-900 dark:text-white">STUDIO VOIX D'OR</span>
+</div>
+<p class="text-gray-500 text-xs">© 2024 Studio Voix d'Or. All rights reserved.</p>
+</div>
+</footer>
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-primary text-black rounded-full shadow-lg shadow-primary/20 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+<span class="material-icons text-2xl">chat_bubble_outline</span>
+</button>
+</div>
+
+</body></html>

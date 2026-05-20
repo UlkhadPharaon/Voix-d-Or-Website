@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Studio Voix d'Or - Launch the Empire</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4af25",
+                        "primary-dark": "#b37d10",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#12100c", // Deepened for contrast
+                        "surface-dark": "#1c1914",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "monument": ["Space Grotesk", "sans-serif"] // Fallback simulation for Monument Extended
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", // 24px as requested
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #f4af25 0%, #d48f15 100%)',
+                        'liquid-gold': 'linear-gradient(90deg, #f4af25, #fff5d6, #f4af25)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Styles for specific visual effects */
+        .glass-panel {
+            background: rgba(28, 25, 20, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(244, 175, 37, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-tracking-wide-custom {
+            letter-spacing: 0.2em;
+        }
+
+        /* Liquid Gold Button Animation */
+        .btn-liquid {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-liquid::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-liquid:hover::before {
+            left: 100%;
+        }
+
+        .btn-liquid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(244, 175, 37, 0.5);
+        }
+
+        /* Rim Lighting Effect for Left Panel */
+        .rim-light-overlay {
+            background: radial-gradient(circle at 30% 50%, rgba(244, 175, 37, 0.15) 0%, transparent 60%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12100c; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #393328; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #544c3b; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-background-dark">
+<div class="flex min-h-screen w-full flex-col lg:flex-row overflow-hidden">
+<!-- Left Panel: Brand & Map -->
+<!-- Added data-location for map image context -->
+<div class="relative w-full lg:w-1/2 flex flex-col justify-between p-8 lg:p-16 bg-[#0a0907] overflow-hidden">
+<!-- Background Image: 3D Gold Map of Ouagadougou -->
+<div class="absolute inset-0 z-0 opacity-80" data-alt="Abstract golden topographic map with dramatic lighting" data-location="Ouagadougou" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD43ZUXytKMhaf3Bizr55ECi6nIupxKjd2Q2sM_FfqTqIht6vSnMf_eNb6yI3t2p5oGB15HFOxvKUedUs3oadf-Rn-8JM2Te5dz_XELFJdVy1pH_kxfe9Sse4mdqJRDhpLCH6rYB076M9-unHfTtc9QcH0bhiq06Vf6kyhhzgUzX6eSNCT3iGOozFhOtdLldViR2CfjRdkPKhRTD4gasK1MCKIHW0bU-ahRVeNzrxxHyA_b_udIFruFgVgIw2zpWtxFctjbfPlOPvOg'); background-size: cover; background-position: center;">
+</div>
+<!-- Rim Lighting Overlay -->
+<div class="absolute inset-0 z-0 rim-light-overlay pointer-events-none mix-blend-screen"></div>
+<!-- Dark Gradient Fade -->
+<div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0a0907] via-transparent to-[#0a0907]/80"></div>
+<div class="absolute inset-0 z-0 bg-gradient-to-r from-[#0a0907]/90 to-transparent"></div>
+<!-- Header Content -->
+<div class="relative z-10">
+<div class="flex items-center gap-3 text-primary mb-8">
+<span class="material-symbols-outlined text-4xl">graphic_eq</span>
+<h2 class="text-white text-xl font-bold tracking-widest uppercase">Studio Voix d'Or</h2>
+</div>
+</div>
+<!-- Middle Content: Map Title (Visual Anchor) -->
+<div class="relative z-10 my-auto">
+<h1 class="text-5xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-[#f4af25] to-[#8a6010] leading-tight tracking-tighter uppercase drop-shadow-2xl">
+                    Ouaga<br/>dougou
+                </h1>
+<div class="h-1 w-24 bg-primary mt-6 rounded-full shadow-[0_0_15px_rgba(244,175,37,0.6)]"></div>
+</div>
+<!-- Footer Contact Info -->
+<div class="relative z-10 mt-12 space-y-6">
+<div class="flex flex-col gap-1">
+<p class="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-2">Headquarters</p>
+<p class="text-white text-lg font-medium tracking-wide">1200 Logements, Ouagadougou</p>
+<p class="text-gray-400 text-sm tracking-widest font-light">BURKINA FASO</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-8 pt-6 border-t border-white/10">
+<div>
+<p class="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-1">Contact</p>
+<a class="text-white hover:text-primary transition-colors block text-sm tracking-wider" href="mailto:contact@voixdor.com">contact@voixdor.com</a>
+</div>
+<div>
+<p class="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-1">Studio</p>
+<a class="text-white hover:text-primary transition-colors block text-sm tracking-wider" href="tel:+22655555555">+226 55 55 55 55</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Form -->
+<div class="w-full lg:w-1/2 bg-background-dark relative flex items-center justify-center p-6 lg:p-12 xl:p-20">
+<!-- Subtle background texture/glow -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="w-full max-w-lg relative z-10">
+<!-- Form Container -->
+<div class="glass-panel rounded-lg p-8 md:p-10">
+<div class="mb-10 text-center">
+<h3 class="text-3xl font-bold text-white mb-2">Initiate Collaboration</h3>
+<p class="text-gray-400 text-sm">Fill the form below to launch your empire.</p>
+</div>
+<form class="flex flex-col gap-6">
+<!-- Name Field -->
+<div class="group relative">
+<label class="block text-primary text-xs font-bold uppercase tracking-widest mb-2 pl-4" for="name">Identity</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<input class="w-full bg-[#12100c] border border-[#393328] text-white text-sm rounded-full focus:ring-1 focus:ring-primary focus:border-primary block p-4 pl-12 placeholder-gray-600 transition-all duration-300" id="name" placeholder="Full Name" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="group relative">
+<label class="block text-primary text-xs font-bold uppercase tracking-widest mb-2 pl-4" for="email">Coordinates</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="w-full bg-[#12100c] border border-[#393328] text-white text-sm rounded-full focus:ring-1 focus:ring-primary focus:border-primary block p-4 pl-12 placeholder-gray-600 transition-all duration-300" id="email" placeholder="Professional Email" type="email"/>
+</div>
+</div>
+<!-- Service Select -->
+<div class="group relative">
+<label class="block text-primary text-xs font-bold uppercase tracking-widest mb-2 pl-4" for="service">Mission</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic_external_on</span>
+</div>
+<select class="w-full bg-[#12100c] border border-[#393328] text-white text-sm rounded-full focus:ring-1 focus:ring-primary focus:border-primary block p-4 pl-12 appearance-none transition-all duration-300 cursor-pointer" id="service">
+<option disabled="" selected="" value="">Select Service Required</option>
+<option value="voiceover">Voice Over Production</option>
+<option value="dubbing">Dubbing &amp; Localization</option>
+<option value="sound_design">Sound Design &amp; Foley</option>
+<option value="mixing">Mixing &amp; Mastering</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-500">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Message Field -->
+<div class="group relative">
+<label class="block text-primary text-xs font-bold uppercase tracking-widest mb-2 pl-4" for="message">Vision</label>
+<div class="relative">
+<textarea class="w-full bg-[#12100c] border border-[#393328] text-white text-sm rounded-2xl focus:ring-1 focus:ring-primary focus:border-primary block p-4 placeholder-gray-600 transition-all duration-300 resize-none" id="message" placeholder="Describe your project goals..." rows="3"></textarea>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="btn-liquid w-full bg-primary hover:bg-white text-background-dark font-black uppercase text-sm tracking-widest py-4 px-8 rounded-full shadow-[0_0_20px_rgba(244,175,37,0.3)] flex items-center justify-center gap-3 group" type="submit">
+<span>Lancer l'Empire</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<p class="text-center text-[#544c3b] text-xs mt-2">
+                            High-fidelity audio production starts here.
+                        </p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or - Cinematic Journey</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d434",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#050505", /* Adjusted for Vantablack feel */
+                        "secondary-dark": "#1a1a1a",
+                        "champagne": "#e8dca8",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'carbon-fiber': "radial-gradient(circle at center, transparent 0%, #050505 100%), repeating-linear-gradient(45deg, rgba(20,20,20, 0.1) 0px, rgba(20,20,20, 0.1) 2px, transparent 2px, transparent 4px), repeating-linear-gradient(-45deg, rgba(20,20,20, 0.1) 0px, rgba(20,20,20, 0.1) 2px, transparent 2px, transparent 4px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Utilities for Cinematic Effects */
+        .cinematic-glow {
+            text-shadow: 0 0 10px rgba(244, 212, 52, 0.3);
+        }
+        
+        .poster-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: grayscale(100%) contrast(110%) brightness(0.9);
+        }
+        
+        .poster-card:hover {
+            filter: grayscale(0%) contrast(100%) brightness(1);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(244, 212, 52, 0.15);
+        }
+
+        .shutter-spin:hover .shutter-icon {
+            transform: rotate(180deg);
+        }
+        
+        .shutter-icon {
+            transition: transform 0.8s ease-in-out;
+        }
+
+        /* Scanline effect */
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden">
+<!-- Navbar -->
+<header class="fixed top-0 left-0 w-full z-50 border-b border-[#333] bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">shutter_speed</span>
+<h2 class="text-white text-xl font-bold tracking-widest uppercase">Studio Voix d'Or</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-gray-400 hover:text-primary text-sm uppercase tracking-widest transition-colors" href="#">Work</a>
+<a class="text-white text-sm uppercase tracking-widest font-bold" href="#">Studio</a>
+<a class="text-gray-400 hover:text-primary text-sm uppercase tracking-widest transition-colors" href="#">About</a>
+<a class="text-gray-400 hover:text-primary text-sm uppercase tracking-widest transition-colors" href="#">Contact</a>
+</nav>
+<button class="hidden md:flex bg-primary hover:bg-[#ffe045] text-background-dark px-6 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all">
+                Book Session
+            </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="relative bg-carbon-fiber min-h-screen pt-20">
+<!-- Hero: The Visionary -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+<!-- Background Image with data-alt -->
+<div class="absolute inset-0 w-full h-full z-0 opacity-40 mix-blend-luminosity">
+<img alt="Cinematic visionary silhouette" class="w-full h-full object-cover object-top" data-alt="Abstract silhouette of a filmmaker looking at light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmxysJfZNNpTkJ_908OZlXQoLPFkHjG69r39lrNIppYOIKONFWOkOq2L5ROzz-uOPZ2wjqtwycrE7Mnp3obdEQ2DmnYhY1gG0bNQ75qbQbj2qM3BOVoOv399pU86-X2o8dK7-t5cbpwU-TCeq3DamM-bFbWSh5HImpO5shRI3t8M9pjkcIhbfFIqNbJKXXKYnlMZrTXQ165mVJ6b3aRny8xN24pojVIAvRUkvzoQMsF8jeV5Cp2_VlIH17mi40goEgBuC2wcEwgkiD"/>
+</div>
+<!-- Champagne Glow Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent z-10"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-champagne/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+<div class="relative z-20 container mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 border border-primary/30 rounded-full px-4 py-1 mb-8 bg-black/40 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Est. 2018 — Paris</span>
+</div>
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-6 uppercase mix-blend-overlay opacity-90">
+                    The<br/>Visionary
+                </h1>
+<p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed tracking-wide">
+                    In the silence between frames, we find the voice of gold. <span class="text-primary cinematic-glow">Architects of light</span>, shadow, and sound, crafting legacies that echo through time.
+                </p>
+<div class="mt-12 flex justify-center">
+<button class="group flex items-center gap-4 text-white hover:text-primary transition-colors">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined group-hover:rotate-90 transition-transform duration-500">arrow_downward</span>
+</div>
+<span class="text-sm font-bold uppercase tracking-widest">Explore The Journey</span>
+</button>
+</div>
+</div>
+<!-- Scanlines Overlay -->
+<div class="absolute inset-0 scanlines opacity-30 z-10 pointer-events-none"></div>
+</section>
+<!-- The Journey Timeline -->
+<section class="relative py-32 px-6 overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent"></div>
+<div class="container mx-auto max-w-5xl relative z-10">
+<div class="text-center mb-24">
+<h2 class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">The Reel</h2>
+<h3 class="text-4xl md:text-5xl font-bold text-white uppercase tracking-tight">Our Legacy in Motion</h3>
+</div>
+<!-- Timeline Item 1: 2018 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 items-center group shutter-spin">
+<div class="text-right md:pr-12 order-2 md:order-1">
+<span class="block text-6xl font-bold text-white/10 group-hover:text-primary/20 transition-colors duration-500 -mb-6 relative z-0">2018</span>
+<h4 class="text-2xl font-bold text-white relative z-10 mb-2">The First Cut</h4>
+<p class="text-gray-400 font-light text-sm leading-relaxed">
+                            Founded in a small Parisian loft, driven by a singular obsession: to capture the uncapturable. Our first short film garnered international acclaim at Cannes.
+                        </p>
+</div>
+<div class="relative flex justify-center items-center order-1 md:order-2 md:-ml-[3.2rem]">
+<div class="absolute w-full h-px bg-primary/20 md:hidden top-1/2 left-0 -z-10"></div>
+<div class="w-10 h-10 bg-background-dark border border-primary rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(244,212,52,0.3)] z-20">
+<span class="material-symbols-outlined text-primary text-lg shutter-icon">shutter_speed</span>
+</div>
+<div class="pl-12 hidden md:block">
+<!-- Image description: Abstract close up of a vintage film camera lens -->
+<div class="w-64 h-40 bg-gray-900 rounded overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img alt="2018 camera lens" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="Close up of vintage camera lens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqhS-tIdQU0iNaQycs4x540iPbrO5glmQozPKJupd6SBTY019QNC0pNEYEGYkLqF6gD6IyeDMsPflRWgCOWU5rsdzyGH3Bk5JNoIo0wAZ--z9kMjW660zFjVmOsii9b1f7EPuz4wjpOXvpnylxt-gHWIG-dsWrMoabVD2Uw_P_N_WDl5Ft9i_pfTRRN8nBaeVFqneFDFrDyAhIyCnUn1eURxjBIyxxVQ2vmsel1uwEjvXB0Smq8h1Zn-lmfKw2aWi8RMjoNWv5Z5mm"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2: 2020 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 items-center group shutter-spin">
+<div class="relative flex justify-center items-center order-1 md:-mr-[3.2rem]">
+<div class="absolute w-full h-px bg-primary/20 md:hidden top-1/2 left-0 -z-10"></div>
+<div class="pr-12 hidden md:block text-right">
+<!-- Image description: A dimly lit film editing suite with multiple monitors -->
+<div class="w-64 h-40 bg-gray-900 rounded overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors ml-auto">
+<img alt="2020 editing suite" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="Film editing suite with monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASn-o7IpfVneytaIbMKBfE9j25FSJW0cV2mIZn-BUObJJTuaTXrkzzW49di_1EYXRGCXDKhz9Y_6Ei42Io4uQpiQOeeJA3ihTxj3kTRnx90mZjcjobDjHpamJ2gpbg44DxvumGii296P-A1c9DFVdzsicU3LKbQRjx6jQ9PQYy09aJN-V2BKSTI4T-y37soQ2FlUeYCUD3Ljbb7-MsB5kOXjNVsCgUQcReCUU-fNc9h4qzL5EZyDoWzRz31xLtjKxOpd8HwfVjHSwd"/>
+</div>
+</div>
+<div class="w-10 h-10 bg-background-dark border border-primary rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(244,212,52,0.3)] z-20">
+<span class="material-symbols-outlined text-primary text-lg shutter-icon">camera</span>
+</div>
+</div>
+<div class="text-left md:pl-12 order-2">
+<span class="block text-6xl font-bold text-white/10 group-hover:text-primary/20 transition-colors duration-500 -mb-6 relative z-0">2020</span>
+<h4 class="text-2xl font-bold text-white relative z-10 mb-2">Expanding Horizons</h4>
+<p class="text-gray-400 font-light text-sm leading-relaxed">
+                            London called. We answered by opening our second studio dedicated to high-fidelity sound design, integrating Dolby Atmos workflows for immersive storytelling.
+                        </p>
+</div>
+</div>
+<!-- Timeline Item 3: 2022 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 items-center group shutter-spin">
+<div class="text-right md:pr-12 order-2 md:order-1">
+<span class="block text-6xl font-bold text-white/10 group-hover:text-primary/20 transition-colors duration-500 -mb-6 relative z-0">2022</span>
+<h4 class="text-2xl font-bold text-white relative z-10 mb-2">Global Recognition</h4>
+<p class="text-gray-400 font-light text-sm leading-relaxed">
+                            With projects spanning three continents, Voix d'Or became synonymous with luxury visual branding. Our New York office launched to serve major fashion houses.
+                        </p>
+</div>
+<div class="relative flex justify-center items-center order-1 md:order-2 md:-ml-[3.2rem]">
+<div class="absolute w-full h-px bg-primary/20 md:hidden top-1/2 left-0 -z-10"></div>
+<div class="w-10 h-10 bg-background-dark border border-primary rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(244,212,52,0.3)] z-20">
+<span class="material-symbols-outlined text-primary text-lg shutter-icon">movie_filter</span>
+</div>
+<div class="pl-12 hidden md:block">
+<!-- Image description: A film set at night with bright lights and a camera crane -->
+<div class="w-64 h-40 bg-gray-900 rounded overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img alt="2022 film set" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="Film set with lights and camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeW0I2ROD5oETG10MatfyPZWtI21dhAC_XHbyRk9xf0JYAdwPlJlZlBG5PNr6Qrh8LKV1y5rHq8wll8VitQlHbTrar_z5cp1TleBZGdD2kVqe7TidPlJrdSmRPMnLuyY_m74UBuYrwVSmWpZ-Gs3sRP3L2R2PNgsYHIX4mJgcLY_hIMdAtHS7RTpwXaa3AxVh0z0jxD97hrnBOJoud6ZBap82iO9Xv-t1xlMjB88GMwyNxXy9HWnrbhDmDygARLmD2wTTQW2IfVgPd"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4: 2024 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center group shutter-spin">
+<div class="relative flex justify-center items-center order-1 md:-mr-[3.2rem]">
+<div class="absolute w-full h-px bg-primary/20 md:hidden top-1/2 left-0 -z-10"></div>
+<div class="pr-12 hidden md:block text-right">
+<!-- Image description: Abstract futuristic light tunnel or server room -->
+<div class="w-64 h-40 bg-gray-900 rounded overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors ml-auto">
+<img alt="2024 future tech" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="Futuristic light tunnel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxy56WN3P_Cr2WOgosg1MZd4u5c7F7FPY1BximpXHNAWVhHs2X_PNdcW6Rwi0MmV_u8vEQqc47LD6XgY8oF8s88FSxKE3upa40GWB3Ge8--ZftUgZK5m__vzlhDR8WbE_cfW5Sc60zjodbubV5NqV06u5Gtafmet6qERkMiHcEalrk0oov_fWSwzaLmV8PMkVo17nAkxrNQMHGA6-dI1DrouUT74C6b9fHhvTnbym9V2u7vD3cweDLKFoelTn0FTBORDF6-F9-zq2"/>
+</div>
+</div>
+<div class="w-10 h-10 bg-background-dark border border-primary rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(244,212,52,0.3)] z-20">
+<span class="material-symbols-outlined text-primary text-lg shutter-icon">auto_awesome</span>
+</div>
+</div>
+<div class="text-left md:pl-12 order-2">
+<span class="block text-6xl font-bold text-white/10 group-hover:text-primary/20 transition-colors duration-500 -mb-6 relative z-0">2024</span>
+<h4 class="text-2xl font-bold text-white relative z-10 mb-2">The New Era</h4>
+<p class="text-gray-400 font-light text-sm leading-relaxed">
+                            Embracing AI and virtual production. We are not just recording reality; we are building new ones. The studio expands into interactive media and VR.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Cast: Team Section -->
+<section class="py-32 px-6 bg-[#080808] border-t border-white/5 relative">
+<div class="container mx-auto max-w-7xl">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div>
+<h2 class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">The Cast</h2>
+<h3 class="text-4xl md:text-5xl font-bold text-white uppercase tracking-tight">Main Credits</h3>
+</div>
+<div class="hidden md:block">
+<p class="text-gray-500 text-sm tracking-widest uppercase">Select a profile to view filmography</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Team Member 1 -->
+<div class="group cursor-pointer">
+<div class="poster-card relative aspect-[2/3] border border-primary/40 rounded bg-secondary-dark overflow-hidden mb-6">
+<!-- Image description: Portrait of a serious man with glasses in black and white high contrast -->
+<img alt="Alexandre Dubois" class="w-full h-full object-cover" data-alt="Portrait of the founder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtu5f9mbTfDkkVVYCMCygXE9QcGvU2GTKBLPKvPKqKjvtFYjZwHU37HV7imVy5x7iOZpzLeOUfj9Wj5cqoxrN2SJEGzI-_sBZSwu8xvrDwwfzkn2yHBVOdM5aTowB2hN7coRYXq2PywnxHTRanu5CBvhezy597Ng1XXBBANY_bsrE0bO19IJdCNNg8dYlCTOA_XQK70t77AJRB0pAeZaBLvK6OTyNWQZLS-48Hj1khaqOVmnLlbC_eLLQPPsXp63HJYOJL4nUgw2NA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-8 h-0.5 bg-primary mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100"></div>
+<h4 class="text-2xl font-bold text-white uppercase tracking-tight leading-none mb-1">Alexandre<br/>Dubois</h4>
+<p class="text-primary text-xs tracking-[0.2em] uppercase font-bold">Executive Producer</p>
+</div>
+<!-- Film Strip Decoration -->
+<div class="absolute top-4 right-4 text-white/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">videocam</span>
+</div>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="group cursor-pointer">
+<div class="poster-card relative aspect-[2/3] border border-primary/40 rounded bg-secondary-dark overflow-hidden mb-6">
+<!-- Image description: Portrait of a creative woman with short hair looking sideways -->
+<img alt="Elena Vorous" class="w-full h-full object-cover" data-alt="Portrait of the creative director" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo7zp0spxaJGb9ZrlBVw7uGqfFldIIzqWC77RdGvvm6y_5wb-a-sraICR0rK1lCn4Kdh6AtxRT4NjemHCNrUcN2JOUMgiYWmx-IsfV_Fqzb8P6nR9FenshEy6ufvM23lWncBnobyPHKM0LT-4aYv9zypbXMJac4EQUGe8Rjhz3-ZspWgyXD8TTlmbnYSjPn-JmV0x4KZBeEIO_V-Pj5f9Wt2bll_HKcsAkZEd-9yYo6JX-OFx_Tat6E9SahfqT74-mncbZbOYAx-5P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-8 h-0.5 bg-primary mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100"></div>
+<h4 class="text-2xl font-bold text-white uppercase tracking-tight leading-none mb-1">Elena<br/>Vorous</h4>
+<p class="text-primary text-xs tracking-[0.2em] uppercase font-bold">Director of Photography</p>
+</div>
+<div class="absolute top-4 right-4 text-white/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">camera_enhance</span>
+</div>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="group cursor-pointer">
+<div class="poster-card relative aspect-[2/3] border border-primary/40 rounded bg-secondary-dark overflow-hidden mb-6">
+<!-- Image description: Portrait of a man with a beard looking intense -->
+<img alt="Marcus Chen" class="w-full h-full object-cover" data-alt="Portrait of the lead sound engineer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi32B4Qa7tp-Hwog4xgpaxnDQV-Fa2cjTqoN1nP9xh_rLMeSnsJP_MJ7R4dKYLNkP6V09DuX8IYZ519pbKThVfTCvhnc0Z0avxzQ1DsI4wcq_qChu5Tk1Tt1pbBMTczUcdW2M8HsvYepJl270EIW1100dbLY3ieJRKRdhxBq5-obHhB4v7B5ApQ_q1mDgQZVod_Q0Jc9z1RxdyCBTwNTO4lfYgXOYMc_T-Efe_qpS8XlAmdvk2Vf4mtO_d2OO3te7TEKtCjfYWklFE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-8 h-0.5 bg-primary mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100"></div>
+<h4 class="text-2xl font-bold text-white uppercase tracking-tight leading-none mb-1">Marcus<br/>Chen</h4>
+<p class="text-primary text-xs tracking-[0.2em] uppercase font-bold">Sound Architect</p>
+</div>
+<div class="absolute top-4 right-4 text-white/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">graphic_eq</span>
+</div>
+</div>
+</div>
+<!-- Team Member 4 -->
+<div class="group cursor-pointer">
+<div class="poster-card relative aspect-[2/3] border border-primary/40 rounded bg-secondary-dark overflow-hidden mb-6">
+<!-- Image description: Portrait of a woman with curly hair smiling mysteriously -->
+<img alt="Sarah O'Neil" class="w-full h-full object-cover" data-alt="Portrait of the VFX supervisor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW6ftNJ3_Gwdu56qlgruQnwv3k1vDdIFAbXQ89ykH6z7YOQvbGHfXsAI0z0l5SeM0KoadB4mo1PxWl81tNsU5LiW88MjW4VQ13lMYppwVRnICVSmL_CtApZQGEoEK6X78e18pZAA_2HVBtotFekMFg2An8bK6h2YbLEUKxN9yTzRCx9ev6ZU-XTPKErlnurmMKN2EoKuYYMkxnuIpAX-q5G14Prl_nQRgG-rAwrf-9yLTa-gh3awE0-dTncWcsbTASi-EyMqxgTjd1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-8 h-0.5 bg-primary mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100"></div>
+<h4 class="text-2xl font-bold text-white uppercase tracking-tight leading-none mb-1">Sarah<br/>O'Neil</h4>
+<p class="text-primary text-xs tracking-[0.2em] uppercase font-bold">VFX Supervisor</p>
+</div>
+<div class="absolute top-4 right-4 text-white/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">animation</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section: The Finale -->
+<section class="py-32 px-6 flex items-center justify-center relative overflow-hidden bg-background-dark">
+<!-- Background Texture -->
+<div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23f4d434\' fill-opacity=\'0.1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+<div class="relative z-10 text-center max-w-4xl">
+<h2 class="text-5xl md:text-7xl font-bold text-white uppercase tracking-tight mb-8">
+                     Ready for the <span class="text-primary block md:inline">Final Cut?</span>
+</h2>
+<p class="text-xl text-gray-400 font-light mb-12">
+                     Your story deserves the Voix d'Or treatment. Let's create something timeless.
+                 </p>
+<button class="bg-primary hover:bg-[#ffe045] text-background-dark px-10 py-4 rounded text-base font-bold uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_20px_rgba(244,212,52,0.4)]">
+                     Start Your Production
+                 </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black py-12 border-t border-white/10">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-6">
+<span class="material-symbols-outlined text-2xl">shutter_speed</span>
+<h2 class="text-white text-lg font-bold uppercase">Studio Voix d'Or</h2>
+</div>
+<p class="text-gray-500 text-xs leading-relaxed uppercase tracking-wider">
+                            Paris • London • New York
+                        </p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap justify-between gap-8 md:gap-16">
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Sitemap</h4>
+<ul class="space-y-2 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Work</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Studio</a></li>
+<li><a class="text-primary" href="#">About</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Social</h4>
+<ul class="space-y-2 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Vimeo</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Legal</h4>
+<ul class="space-y-2 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Imprint</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-600 text-xs uppercase tracking-widest">© 2024 Studio Voix d'Or. All rights reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<span class="material-symbols-outlined text-gray-600 hover:text-primary cursor-pointer text-sm">hd</span>
+<span class="material-symbols-outlined text-gray-600 hover:text-primary cursor-pointer text-sm">surround_sound</span>
+<span class="material-symbols-outlined text-gray-600 hover:text-primary cursor-pointer text-sm">4k</span>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or | Cast</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Using a high-weight sans-serif to emulate Monument Extended as requested -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eeb32b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#000000", // Vantablack style
+                        "gold-glow": "rgba(238, 179, 43, 0.4)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "monument": ["Archivo Black", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Grayscale to Color Transition */
+        .portrait-card img {
+            filter: grayscale(100%) contrast(110%);
+            transition: filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .portrait-card:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        /* Glassmorphism Name Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(238, 179, 43, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        /* Liquid Gold Glow Simulation */
+        .gold-trail {
+            position: relative;
+        }
+        .gold-trail::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, transparent, #eeb32b, transparent);
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+        .portrait-card:hover .gold-trail::after {
+            opacity: 1;
+        }
+
+        /* Monument Extended Simulation */
+        .monument-text {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 0.8;
+        }
+
+        /* Custom Bento Grid Heights */
+        .bento-tall { grid-row: span 2; }
+        .bento-wide { grid-column: span 2; }
+
+        /* Animation Perspective */
+        .perspective-container {
+            perspective: 2000px;
+        }
+        .z-rotate-card {
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+        .z-rotate-card:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateZ(30px);
+        }
+    </style>
+</head>
+<body class="font-display">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary flex items-center justify-center rounded-sm">
+<span class="material-symbols-outlined text-black font-bold">view_in_ar</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tighter monument-text">VOIX D'OR</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-xs font-bold tracking-[0.2em] text-white/70 hover:text-primary transition-colors" href="#">TALENT</a>
+<a class="text-xs font-bold tracking-[0.2em] text-white/70 hover:text-primary transition-colors" href="#">STUDIO</a>
+<a class="text-xs font-bold tracking-[0.2em] text-white/70 hover:text-primary transition-colors" href="#">SOUNDS</a>
+<button class="px-6 py-2 border border-primary/40 text-primary text-[10px] font-bold tracking-[0.3em] rounded-full hover:bg-primary hover:text-black transition-all">
+                BOOK CASTING
+            </button>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white">menu</span>
+</div>
+</header>
+<main class="relative pt-32 pb-20 px-4 md:px-12 lg:px-24">
+<!-- Massive Section Header -->
+<div class="relative mb-20">
+<div class="absolute -top-10 -left-10 opacity-10 text-[180px] font-monument monument-text select-none pointer-events-none text-primary">01</div>
+<h1 class="text-[clamp(3rem,12vw,10rem)] monument-text leading-none mb-4 relative z-10">
+                THE <span class="text-primary">CAST</span>
+</h1>
+<div class="flex flex-wrap items-center gap-8 border-t border-white/10 pt-6">
+<p class="text-white/40 text-xs tracking-widest max-w-sm uppercase">
+                    High-fidelity performance capture and vocal artistry for the next generation of digital experiences.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary/10 text-primary px-4 py-1 rounded-full text-[10px] font-bold border border-primary/20">VOICE ARTISTS</button>
+<button class="bg-white/5 text-white/40 px-4 py-1 rounded-full text-[10px] font-bold border border-white/5 hover:border-primary/40 hover:text-primary transition-all">MOTION CAPTURE</button>
+<button class="bg-white/5 text-white/40 px-4 py-1 rounded-full text-[10px] font-bold border border-white/5 hover:border-primary/40 hover:text-primary transition-all">PRODUCERS</button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Cast Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 perspective-container">
+<!-- Card 1: Tall -->
+<div class="portrait-card z-rotate-card bento-tall relative group overflow-hidden rounded-xl h-[600px] gold-trail">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Close up portrait of male voice actor in dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB78gk8kJOxBWeLLWKI45uFUTLxQnuFOWInLK14I9geSrJPyu0DI7rLL0f1OC9oIu7XCcUrRczqToToyXkFwLVTpkuPOa7KPaIV1RVk4gU1SQ3Glr7afgaS_krvYhQCVH40gj4nUEyBxqMsV2c5wXxK-YCmyI_K-4Oy-ftqprSOaTgwVn97SlERmEJe4LLYo-kRWpvgB_IVrNHpyst29O_z-FZAXM7z10zHApQcMa5C8SdbMH4EfgJcPwT9M9aBZOaLLocC2a5J-Jgo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<!-- Glass Name Card -->
+<div class="absolute bottom-6 left-6 right-6 glass-card p-5 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="monument-text text-xl">AMARA OKORO</h3>
+<p class="text-[10px] text-primary tracking-[0.2em] font-bold">LEAD NARRATIVE VOICE</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">graphic_eq</span>
+</div>
+<div class="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+<button class="size-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-sm">play_arrow</span>
+</button>
+<div class="h-[1px] flex-1 bg-white/20 relative">
+<div class="absolute inset-0 bg-primary w-1/3"></div>
+</div>
+<span class="text-[8px] font-mono">0:42</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Square -->
+<div class="portrait-card z-rotate-card relative group overflow-hidden rounded-xl aspect-square gold-trail">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Portrait of energetic motion capture artist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3N-vHor5M4ugPjYzD4VkR78FWEvFGtGQ4q8K-iHwpB5Ia0Tz9e88X4wdtPsTbCQu7uTsE5qLQkXJ8k7CWBy7ztrk0SiN01-yde1tqjs6o6aGiWLk07m28gm9jbLay4lntuftLEp-tWHMMKKeiq2wAo_Ve_6bLvLoTjX2vQTILJgGD2Cks4criTvnDyKVc1iwS_GZVNHYnAcYJxitD7cYB_6vxp9_tqCAfRq5ocKPHhxKSLKMj-DbM7cs3UPUeGYFtn0FYOHVX0y-u"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 glass-card px-4 py-2 rounded-lg">
+<h3 class="monument-text text-sm">KOFI MENSAH</h3>
+<p class="text-[8px] text-white/50 tracking-widest">MOCAP SPECIALIST</p>
+</div>
+</div>
+<!-- Card 3: Wide -->
+<div class="portrait-card z-rotate-card bento-wide relative group overflow-hidden rounded-xl h-[300px] gold-trail">
+<img class="absolute inset-0 w-full h-full object-cover object-top" data-alt="Female singer in professional studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW8yBsuO2WyZ1TdxZbgCzy379lrU2aSbTFvjPJVk6gPdsg4VD9VaR0Mwy7xl_HflfupW_NkQh5oYvQ9gB083zDYK8FZGnpGHFeIS5WgX0ElKaWpmVTLtk2g7sXLgM6THdnHZzNynt1jd2qtVb6Fup_mWlUZ3afCXrGN1SV2yiPb18l7xoe-23W7Di-sg2b169ltLtieaKIXi8xUtuMw9m2XT9_YzPFRV5pjABixHhbnaxVyBk3otB_VlXK2QZmlZ2wVWf5O5JGd5t_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 glass-card p-4 rounded-lg flex gap-8 items-center">
+<div>
+<h3 class="monument-text text-lg">ZURI ADEBAYO</h3>
+<p class="text-[10px] text-primary tracking-[0.2em] font-bold">Vocalist &amp; Producer</p>
+</div>
+<div class="flex items-center gap-2 border-l border-white/10 pl-6">
+<span class="material-symbols-outlined text-white/40 text-lg">settings_voice</span>
+<span class="material-symbols-outlined text-white/40 text-lg">surround_sound</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Standard -->
+<div class="portrait-card z-rotate-card relative group overflow-hidden rounded-xl aspect-[3/4] gold-trail">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Portrait of male music producer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxiFj7LKNWWRuCJGX_asG2WIVB1Vyq7Fdcsg4KOGb6m77BjwmadQvCdAFvRM2UzzwLFnGOJIhqg975ULiVZIFDZejc5KmXPki1ZGptJlkrP8WEDke00_chqFbMJbLmiO1UDffioanHIYvCDTunrD16T3e3EtvHwI9sSVRUHx8NrvEob7zZ04eiR1xf9Jzo6TsUM4YJiVQMMnkcr1rou0pnRn9cNiMoQ67pQ50QBRWKHDaPh0i_FCx7x_4lMw9KzI2Rky-2_0OappnK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 glass-card px-4 py-2 rounded-lg">
+<h3 class="monument-text text-sm">JABARI T'CHALLA</h3>
+<p class="text-[8px] text-white/50 tracking-widest">SOUND ENGINEER</p>
+</div>
+</div>
+<!-- Card 5: Square -->
+<div class="portrait-card z-rotate-card relative group overflow-hidden rounded-xl aspect-square gold-trail">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Portrait of female voice artist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnEiN39738ZikOPPHRA4KEKNqBptg0KYDMge_Py8YhNClyw6aNoo4TEA_cFxhFoXgacZxNN-Mp4pPqviIlQPOsl4U02CPt070MjPcrJRi9uT4Zk4HD65kWZn-btIF-nec0DzV9vdzygv9VwNnElXFfFRLRZG013UQkRAT1jmumsuuPbZzSBesu6Qaxje8oMFYO9KYp5_R9ywbNKd_c9Z4KHLIxgPYNcxO9CsIV3Wl2-wdfgP6VKNvFFc9ItZAHHN4BIqsdgqLTDphF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 glass-card px-4 py-2 rounded-lg">
+<h3 class="monument-text text-sm">NIA WATIPA</h3>
+<p class="text-[8px] text-white/50 tracking-widest">STORYTELLER</p>
+</div>
+</div>
+<!-- Card 6: Wide Tall -->
+<div class="portrait-card z-rotate-card bento-wide relative group overflow-hidden rounded-xl h-[400px] gold-trail">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Dynamic shot of cast members in performance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBqgk78F3ksBjU812VOSJFSOErBopLio0YVEMznp2TSNcqGrFGR84vLuP1QsTjcEwyIeZZD2Rx72JyQKBb5Y6_VBPSiZt9OCIkBCor7s5zmSzifgKIexFCoxX3gruO2PiYE2giKSqosq4q-G6H0Wf2yG35gAPBXkCkLf24PuvQLysm8Hl1c3M6d7qsFwfwu4JTJPZ9NfmvLsZNRyuWsmyHpq8HAyY3GDm4FzHODAaJIbAcqCEQRPhCav1RXE_TJ-FvKGZw5JbsiDHe"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+<div class="absolute top-0 right-0 p-4">
+<div class="glass-card px-3 py-1 rounded text-[8px] text-primary font-bold">LIVE SESSION ACTIVE</div>
+</div>
+<div class="absolute inset-y-0 left-0 w-1/2 flex flex-col justify-center p-8">
+<h3 class="monument-text text-3xl mb-2">VOIX D'OR<br/>ENSEMBLE</h3>
+<p class="text-xs text-white/60 mb-6 font-light leading-relaxed">Multi-layered vocal arrangements and collaborative motion capture sessions available for global distribution.</p>
+<button class="w-fit flex items-center gap-2 group/btn">
+<span class="text-[10px] font-bold tracking-widest">VIEW COLLECTIVE</span>
+<span class="material-symbols-outlined text-sm group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tech Accents Footer -->
+<div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-12">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">dynamic_feed</span>
+<div>
+<h4 class="text-[10px] font-bold tracking-[0.3em] text-white mb-2">NEURAL SYNC</h4>
+<p class="text-[10px] text-white/40 leading-relaxed font-light">Zero-latency motion capture synchronization using proprietary gold-standard tracking algorithms.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">waves</span>
+<div>
+<h4 class="text-[10px] font-bold tracking-[0.3em] text-white mb-2">FREQUENCY RANGE</h4>
+<p class="text-[10px] text-white/40 leading-relaxed font-light">Ultra-high fidelity vocal recording from 20Hz to 40kHz, capturing every nuanced emotional breath.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">biotech</span>
+<div>
+<h4 class="text-[10px] font-bold tracking-[0.3em] text-white mb-2">WAKANDA GEN</h4>
+<p class="text-[10px] text-white/40 leading-relaxed font-light">Advanced performance enhancement through digital twin modeling and AI vocal synthesis.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating UI Data -->
+<div class="fixed bottom-10 right-10 flex flex-col items-end gap-2 opacity-30 hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-2 text-[8px] font-mono tracking-tighter">
+<span class="text-primary">LATENCY:</span> 0.002ms
+        </div>
+<div class="flex items-center gap-2 text-[8px] font-mono tracking-tighter">
+<span class="text-primary">COORD:</span> 6.524 N, 3.379 E
+        </div>
+<div class="w-32 h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+</div>
+</body></html>

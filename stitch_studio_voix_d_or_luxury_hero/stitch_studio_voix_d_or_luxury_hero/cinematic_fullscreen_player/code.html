@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cinematic Fullscreen Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af35",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#0a0a0a",
+                        "glass-dark": "rgba(23, 22, 18, 0.6)",
+                        "gold-metallic": "#d4af35",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "monument": ["Space Grotesk", "sans-serif"], // Fallback since we can't load custom local fonts
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #FBE292 0%, #D4AF37 50%, #AA8220 100%)',
+                        'gold-border': 'linear-gradient(to bottom, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.1))',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.5)',
+                        'rim': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.15)',
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for fullscreen immersive feel */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        /* Metallic text effect */
+        .text-metallic {
+            background: linear-gradient(to bottom, #FBE292, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Gold metallic icon effect */
+        .icon-gold {
+            background: linear-gradient(135deg, #FBE292 0%, #D4AF37 50%, #AA8220 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.5));
+        }
+
+        /* Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fffbe6, #d4af35);
+            cursor: pointer;
+            margin-top: -7px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1px;
+            background-image: linear-gradient(#d4af35, #d4af35);
+            background-size: 35% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        /* Wakanda Tech Glass Style */
+        .wakanda-glass {
+            background: rgba(10, 10, 10, 0.65);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        
+        .wakanda-glass:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.15), 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-black">
+<!-- Cinematic Container -->
+<div class="relative w-full h-full flex flex-col justify-between group">
+<!-- Video Background Layer -->
+<div class="absolute inset-0 z-0">
+<!-- Placeholder for Cinematic Video -->
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[10s] ease-in-out hover:scale-105" data-alt="Dark cinematic mountain landscape with foggy atmosphere" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_i1SEOttY_vdXHkRD7PMKoTesGbZWrX8jJfJGKPvh9cAlY0HCAM8IdoJ9ibtJDv7EBPx8XuzlNUqZKhkhpa1nKSOj_DpMV9a4_qX2PkbR_HbibViJhTDNgp52HXzfpHMh5FgcARVstbMMS3CZS7iFecD9cLM-UlsB-f-mOBI-WXM5kjSawsgrPG7l5CoQiRIxxnNvwzKCDgeSCNrIKX49SVrMNchN7OZGxq418wWH00nLX1QnHrIr00-VhgsTpAUyYM0ZMYzDYeS5');">
+</div>
+<!-- Vignette Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none"></div>
+<!-- Grain Texture Overlay (Optional for film look) -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPg==');"></div>
+</div>
+<!-- Top UI Layer -->
+<div class="relative z-10 w-full p-8 flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+<!-- Top Left: Project Info -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<span class="h-[2px] w-8 bg-primary shadow-glow"></span>
+<h1 class="text-2xl md:text-3xl font-bold tracking-[0.2em] uppercase text-white drop-shadow-md font-monument">
+                        Campagne Orange 2026
+                    </h1>
+</div>
+<p class="text-gray-400 text-xs tracking-widest pl-11 uppercase font-light">
+                    Studio Voix d'Or <span class="mx-2 text-primary">•</span> Final Cut <span class="mx-2 text-primary">•</span> 4K HDR
+                </p>
+</div>
+<!-- Top Right: Utilities -->
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group/settings">
+<span class="material-symbols-outlined text-[20px] group-hover/settings:rotate-90 transition-transform duration-500">settings</span>
+<span class="text-xs font-medium tracking-wider">SETTINGS</span>
+</button>
+<div class="h-4 w-[1px] bg-white/20"></div>
+<button class="group/close relative flex items-center justify-center size-10 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/50 transition-all duration-300">
+<span class="material-symbols-outlined text-white group-hover/close:text-primary transition-colors">close</span>
+</button>
+</div>
+</div>
+<!-- Center: Play Button (Only visible when paused, simplified here as hidden for 'playing' state mockup) -->
+<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+<!-- Hidden by default in this 'playing' view -->
+</div>
+<!-- Bottom UI Layer: Floating Control Bar -->
+<div class="relative z-20 w-full px-8 pb-10 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out delay-75">
+<!-- Glassmorphism Bar -->
+<div class="wakanda-glass rounded-2xl p-1 max-w-4xl w-full flex flex-col gap-1 relative overflow-hidden">
+<!-- Inner Glow Shine -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+<!-- Progress Bar Area -->
+<div class="px-6 pt-4 pb-2 w-full group/slider relative">
+<!-- Hover Time Tooltip (Simulated) -->
+<div class="absolute -top-8 left-[35%] -translate-x-1/2 bg-black/80 text-primary text-[10px] px-2 py-1 rounded border border-white/10 opacity-0 group-hover/slider:opacity-100 transition-opacity">
+                        01:23
+                    </div>
+<input class="w-full h-8 relative z-10" max="100" min="0" type="range" value="35"/>
+</div>
+<!-- Controls Area -->
+<div class="flex items-center justify-between px-6 pb-3 pt-1">
+<!-- Left: Volume -->
+<div class="flex items-center gap-4 w-1/4">
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+<div class="group/vol relative w-24 h-1 bg-white/10 rounded-full cursor-pointer overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-2/3 bg-white/40 group-hover/vol:bg-primary transition-colors"></div>
+</div>
+</div>
+<!-- Center: Playback Controls -->
+<div class="flex items-center justify-center gap-6 w-2/4">
+<button class="text-gray-400 hover:text-white transition-transform hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-3xl">skip_previous</span>
+</button>
+<button class="text-gray-400 hover:text-white transition-transform hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-3xl">replay_10</span>
+</button>
+<button class="flex items-center justify-center size-14 rounded-full bg-gradient-to-br from-white/10 to-black/40 border border-white/10 shadow-rim hover:shadow-glow hover:border-primary/40 group/play transition-all duration-300">
+<!-- Metallic Play Icon -->
+<span class="material-symbols-outlined text-4xl icon-gold fill-current">play_arrow</span>
+</button>
+<button class="text-gray-400 hover:text-white transition-transform hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-3xl">forward_10</span>
+</button>
+<button class="text-gray-400 hover:text-white transition-transform hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-3xl">skip_next</span>
+</button>
+</div>
+<!-- Right: Time & Fullscreen -->
+<div class="flex items-center justify-end gap-6 w-1/4">
+<p class="text-sm font-medium tracking-wide text-gray-300">
+<span class="text-white">01:23</span>
+<span class="text-gray-600 mx-1">/</span>
+                            03:45
+                        </p>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Corner Elements -->
+<div class="fixed top-0 left-0 w-24 h-24 pointer-events-none z-50 bg-gradient-to-br from-black/80 to-transparent"></div>
+<div class="fixed top-0 right-0 w-24 h-24 pointer-events-none z-50 bg-gradient-to-bl from-black/80 to-transparent"></div>
+<div class="fixed bottom-0 left-0 w-24 h-24 pointer-events-none z-50 bg-gradient-to-tr from-black/80 to-transparent"></div>
+<div class="fixed bottom-0 right-0 w-24 h-24 pointer-events-none z-50 bg-gradient-to-tl from-black/80 to-transparent"></div>
+</body></html>

@@ -1,0 +1,503 @@
+/* ═══════════════════════════════════════════════════════
+   VOIX D'OR — Main Stylesheet
+   ═══════════════════════════════════════════════════════ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════
+   SYSTÈME DE THÈMES — Propriétés CSS pour le mode Jour / Nuit
+   Ce système utilise des variables CSS pour permettre un basculement
+   fluide entre les thèmes sans recharger la page.
+   ═══════════════════════════════════════════════════════ */
+
+:root,
+.theme-dark {
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0a;
+  --bg-surface: rgba(5, 5, 5, 0.4);
+  --bg-elevated: #111111;
+  --bg-navbar: rgba(5, 5, 5, 0.80);
+  --bg-navbar-scrolled: rgba(5, 5, 5, 0.92);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.60);
+  --text-muted: rgba(255, 255, 255, 0.40);
+  --text-inverse: #050505;
+
+  --gold: #D4AF37;
+  --gold-light: #E5C560;
+  --gold-subtle: rgba(212, 175, 55, 0.15);
+  --gold-glow: rgba(212, 175, 55, 0.08);
+
+  --border-primary: rgba(255, 255, 255, 0.05);
+  --border-hover: rgba(212, 175, 55, 0.30);
+  --border-card: rgba(255, 255, 255, 0.05);
+
+  --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.15);
+  --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+  --glass-bg: rgba(5, 5, 5, 0.4);
+  --glass-border: rgba(212, 175, 55, 0.3);
+
+  --gradient-bg-overlay: linear-gradient(to top, #0a0a0a, transparent);
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F5E6A3 50%, #D4AF37 100%);
+
+  --theme-transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  --gradient-color: #D4AF37;
+  --sparkles-color: #D4AF37;
+}
+
+.theme-light {
+  --gradient-color: #B8941E;
+  --sparkles-color: #1A1612;
+
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F8F8;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-elevated: #FFFFFF;
+  --bg-navbar: rgba(255, 255, 255, 0.85);
+  --bg-navbar-scrolled: rgba(255, 255, 255, 0.95);
+
+  --text-primary: #121212;
+  --text-secondary: rgba(18, 18, 18, 0.65);
+  --text-muted: rgba(18, 18, 18, 0.40);
+  --text-inverse: #FFFFFF;
+
+  --gold: #B8941E;
+  --gold-light: #D4AF37;
+  --gold-subtle: rgba(184, 148, 30, 0.12);
+  --gold-glow: rgba(184, 148, 30, 0.06);
+
+  --border-primary: rgba(18, 18, 18, 0.08);
+  --border-hover: rgba(184, 148, 30, 0.40);
+  --border-card: rgba(18, 18, 18, 0.08);
+
+  --shadow-glow: 0 0 20px rgba(184, 148, 30, 0.10);
+  --shadow-card: 0 4px 30px rgba(18, 18, 18, 0.08);
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(184, 148, 30, 0.25);
+
+  --gradient-bg-overlay: linear-gradient(to top, #FFFFFF, transparent);
+  --gradient-gold: linear-gradient(135deg, #B8941E 0%, #D4AF37 50%, #B8941E 100%);
+
+  --theme-transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ═══════════════════════════════════════════════════════
+   TRANSITIONS GLOBALES — Switch de thème fluide
+   Applique une transition sur toutes les propriétés visuelles clés
+   pour éviter les saccades lors du changement de mode.
+   ═══════════════════════════════════════════════════════ */
+
+body,
+nav,
+footer,
+main,
+section,
+.glass-card,
+.sharp-outline {
+  transition:
+    background-color var(--theme-transition),
+    color var(--theme-transition),
+    border-color var(--theme-transition),
+    box-shadow var(--theme-transition);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LAYOUT THEME OVERRIDES
+   ═══════════════════════════════════════════════════════ */
+
+/* Navbar */
+.theme-light nav {
+  border-bottom-color: var(--border-primary) !important;
+}
+
+.theme-light nav.scrolled-nav {
+  background: var(--bg-navbar-scrolled) !important;
+  backdrop-filter: blur(20px);
+}
+
+/* Footer */
+.theme-light footer {
+  background-color: var(--bg-secondary) !important;
+  border-top-color: var(--border-primary) !important;
+}
+
+.theme-light footer h3 {
+  color: var(--text-primary) !important;
+}
+
+.theme-light footer p,
+.theme-light footer li,
+.theme-light footer a,
+.theme-light footer span {
+  color: var(--text-secondary) !important;
+}
+
+.theme-light footer a:hover {
+  color: var(--gold) !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   COMPONENT THEME OVERRIDES
+   ═══════════════════════════════════════════════════════ */
+
+/* Text colors that need theming */
+.theme-light .text-white {
+  color: var(--text-primary) !important;
+}
+
+.theme-light .text-white\/40,
+.theme-light .text-white\/50,
+.theme-light .text-white\/60,
+.theme-light .text-white\/70,
+.theme-light .text-white\/80 {
+  color: var(--text-secondary) !important;
+}
+
+.theme-light .text-gray-400,
+.theme-light .text-gray-300,
+.theme-light .text-gray-500,
+.theme-light .text-zinc-400,
+.theme-light .text-zinc-300,
+.theme-light .text-neutral-400,
+.theme-light .text-neutral-300 {
+  color: var(--text-secondary) !important;
+}
+
+.theme-light .text-white\/10,
+.theme-light .text-white\/20,
+.theme-light .text-white\/30 {
+  color: var(--text-muted) !important;
+}
+
+.theme-light .text-white\/90 {
+  color: var(--text-primary) !important;
+}
+
+/* Background overrides */
+.theme-light .bg-vantablack,
+.theme-light .bg-void-black,
+.theme-light .bg-metallic-dark,
+.theme-light .bg-pure-black,
+.theme-light .bg-luxury-black {
+  background-color: var(--bg-primary) !important;
+}
+
+.theme-light .bg-\[\#111\],
+.theme-light .bg-\[\#1a1a1a\],
+.theme-light .bg-\[\#0a0a0a\],
+.theme-light .bg-\[\#050505\],
+.theme-light .bg-black {
+  background-color: var(--bg-secondary) !important;
+}
+
+.theme-light .bg-black\/20,
+.theme-light .bg-black\/40,
+.theme-light .bg-black\/60 {
+  background-color: rgba(18, 18, 18, 0.04) !important;
+}
+
+.theme-light .bg-white\/5,
+.theme-light .bg-white\/10 {
+  background-color: rgba(18, 18, 18, 0.03) !important;
+}
+
+/* Gradients that need neutralizing in light mode */
+.theme-light .from-black,
+.theme-light .via-black\/80,
+.theme-light .from-\[\#0a0a0a\],
+.theme-light .via-\[\#0a0a0a\]\/50 {
+  /* Remove dark gradients by making them transparent or light */
+  --tw-gradient-from: transparent !important;
+  --tw-gradient-via: transparent !important;
+  --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to) !important;
+}
+
+/* Border overrides */
+.theme-light .border-white\/5,
+.theme-light .border-white\/10,
+.theme-light .border-white\/20,
+.theme-light .border-white\/30 {
+  border-color: var(--border-primary) !important;
+}
+
+.theme-light .text-transparent.bg-clip-text.from-white {
+  background: none !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-light .text-transparent.bg-clip-text.from-gold {
+  background: none !important;
+  -webkit-text-fill-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+.theme-light .to-white\/20,
+.theme-light .to-white\/30 {
+  --tw-gradient-to: rgba(18, 18, 18, 0.2) !important;
+}
+
+.theme-light .from-white\/10,
+.theme-light .from-white\/20 {
+  --tw-gradient-from: rgba(18, 18, 18, 0.05) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+/* Glassmorphism in light mode */
+.theme-light .glass-card {
+  background: var(--glass-bg) !important;
+  border-color: var(--glass-border) !important;
+  backdrop-filter: blur(40px);
+}
+
+/* Custom backgroundImage utility overrides for Light Mode */
+.theme-light .bg-subtle-smoke {
+  background-image: radial-gradient(circle at 50% 50%, rgba(240, 240, 240, 0.8) 0%, rgba(255, 255, 255, 1) 100%) !important;
+}
+
+.theme-light .bg-faso-pattern {
+  background-image: repeating-linear-gradient(45deg, rgba(18, 18, 18, 0.02) 0px, rgba(18, 18, 18, 0.02) 10px, rgba(18, 18, 18, 0.04) 10px, rgba(18, 18, 18, 0.04) 20px) !important;
+}
+
+.theme-light .bg-metallic-gradient {
+  background-image: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%) !important;
+}
+
+/* Navbar text */
+.theme-light .bg-vantablack\/80 {
+  background-color: var(--bg-navbar-scrolled) !important;
+}
+
+/* Background glows — mute in light mode */
+.theme-light .bg-gold-500\/5 {
+  background-color: rgba(184, 148, 30, 0.03) !important;
+}
+
+.theme-light .bg-blue-900\/10 {
+  background-color: rgba(184, 148, 30, 0.02) !important;
+}
+
+/* Gold accent overrides for light mode — slightly darker gold for contrast */
+.theme-light .text-champagne-gold {
+  color: var(--gold) !important;
+}
+
+.theme-light .border-champagne-gold\/30 {
+  border-color: var(--border-hover) !important;
+}
+
+.theme-light .hover\:bg-champagne-gold:hover {
+  background-color: var(--gold) !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SPLINE 3D THEME TOGGLE — Navbar Integration
+   ═══════════════════════════════════════════════════════ */
+
+.spline-theme-toggle {
+  width: 60px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.spline-theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+.spline-theme-toggle canvas {
+  border-radius: 24px;
+}
+
+.spline-toggle-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 24px;
+}
+
+.spline-toggle-icon {
+  font-size: 18px;
+  color: #D4AF37;
+  animation: spline-spin 3s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════
+   EXISTING UTILITIES (preserved from original)
+   ═══════════════════════════════════════════════════════ */
+
+@layer utilities {
+  .font-monument {
+    font-family: 'Monument Extended', sans-serif;
+  }
+
+  .font-satoshi {
+    font-family: 'Satoshi', sans-serif;
+  }
+
+  .faso-overlay {
+    background-image:
+      linear-gradient(30deg, transparent 40%, rgba(212, 175, 55, 0.03) 40%, rgba(212, 175, 55, 0.03) 45%, transparent 45%),
+      linear-gradient(-30deg, transparent 40%, rgba(212, 175, 55, 0.02) 40%, rgba(212, 175, 55, 0.02) 45%, transparent 45%);
+    background-size: 60px 100px;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .sharp-outline {
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+  }
+
+  .sharp-outline:hover {
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 1), 0 0 20px rgba(212, 175, 55, 0.15);
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .liquid-border {
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: borderFlow 2s infinite linear;
+  }
+
+  @keyframes borderFlow {
+    0% {
+      background-position: 100% 0;
+    }
+
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  @keyframes float-slow {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     HOLOGRAPHIC CARD
+     ═══════════════════════════════════════════════════════ */
+  .holographic-card {
+    will-change: transform;
+    transform-style: preserve-3d;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+  }
+
+  .holographic-card:hover .holo-glow {
+    opacity: 1;
+  }
+
+  .holo-glow {
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+        rgba(212, 175, 55, 0.15) 0%,
+        transparent 80%);
+  }
+
+  /* Theme-specific glow colors */
+  .theme-light .holo-glow {
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+        rgba(184, 148, 30, 0.15) 0%,
+        transparent 80%);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   PRESERVE WHITE FOR VIDEO HEROES AND DARK SECTIONS
+   ═══════════════════════════════════════════════════════ */
+.theme-light .preserve-white .text-white {
+  color: #ffffff !important;
+}
+
+.theme-light .preserve-white .text-white\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.theme-light .preserve-white .text-white\/70 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.theme-light .preserve-white .text-white\/60 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.theme-light .preserve-white .text-white\/50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.theme-light .preserve-white .text-white\/40 {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.theme-light .preserve-white .text-white\/30 {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.theme-light .preserve-white .text-white\/20 {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.theme-light .preserve-white .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.theme-light .preserve-white .text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.theme-light .preserve-white .from-white {
+  --tw-gradient-from: #ffffff !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.theme-light .preserve-white .to-white\/20 {
+  --tw-gradient-to: rgba(255, 255, 255, 0.2) !important;
+}
+
+.theme-light .preserve-white .to-white\/50 {
+  --tw-gradient-to: rgba(255, 255, 255, 0.5) !important;
+}

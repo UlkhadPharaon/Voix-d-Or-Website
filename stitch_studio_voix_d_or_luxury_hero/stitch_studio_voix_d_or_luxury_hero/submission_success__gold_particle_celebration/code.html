@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or - Succès</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af35",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201d12",
+                        "vantablack": "#050505",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #d4af35 0%, #fceabb 50%, #d4af35 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom particle simulation using CSS */
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 53, 0.8) 0%, rgba(212, 175, 53, 0) 70%);
+            box-shadow: 0 0 10px 2px rgba(212, 175, 53, 0.3);
+            animation: float 20s infinite linear;
+            opacity: 0;
+        }
+
+        /* Generate random particles via CSS nth-child */
+        .particle:nth-child(1) { width: 4px; height: 4px; top: 10%; left: 20%; animation-duration: 15s; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; top: 60%; left: 80%; animation-duration: 25s; animation-delay: -5s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; top: 40%; left: 40%; animation-duration: 18s; animation-delay: -2s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; top: 80%; left: 10%; animation-duration: 22s; animation-delay: -8s; }
+        .particle:nth-child(5) { width: 2px; height: 2px; top: 20%; left: 90%; animation-duration: 12s; animation-delay: -3s; }
+        .particle:nth-child(6) { width: 8px; height: 8px; top: 90%; left: 60%; animation-duration: 30s; animation-delay: -10s; }
+        .particle:nth-child(7) { width: 4px; height: 4px; top: 30%; left: 70%; animation-duration: 16s; animation-delay: -1s; }
+        .particle:nth-child(8) { width: 6px; height: 6px; top: 70%; left: 30%; animation-duration: 24s; animation-delay: -6s; }
+        .particle:nth-child(9) { width: 3px; height: 3px; top: 50%; left: 50%; animation-duration: 20s; animation-delay: -4s; }
+        .particle:nth-child(10) { width: 1px; height: 1px; top: 10%; left: 50%; animation-duration: 10s; animation-delay: -7s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        .glass-circle {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 53, 0.3);
+            box-shadow: 0 0 60px -10px rgba(212, 175, 53, 0.15), inset 0 0 20px rgba(212, 175, 53, 0.1);
+        }
+
+        .shimmer-text {
+            background: linear-gradient(to right, #b6b1a0 20%, #ffffff 50%, #b6b1a0 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 500% auto;
+            animation: textShimmer 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes textShimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body class="font-display bg-vantablack text-white min-h-screen flex flex-col overflow-x-hidden relative">
+<!-- Background Effects -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<!-- Radial gradient for depth -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(32,29,18,0.4)_0%,rgba(5,5,5,1)_70%)]"></div>
+<!-- Dust/Noise texture overlay -->
+<div class="absolute inset-0 opacity-20 mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
+<!-- Animated Golden Particles -->
+<div class="particle-container">
+<div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+<div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+<!-- More density for cinematic effect -->
+<div class="particle" style="left: 15%; animation-duration: 28s;"></div>
+<div class="particle" style="left: 85%; animation-duration: 32s;"></div>
+<div class="particle" style="left: 45%; width: 2px; height: 2px; animation-duration: 19s;"></div>
+</div>
+</div>
+<!-- Navigation -->
+<header class="relative z-10 flex items-center justify-between px-6 py-6 lg:px-12 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined !text-[32px]">graphic_eq</span>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight uppercase opacity-90 group-hover:opacity-100 transition-opacity">Studio Voix d'Or</h2>
+</div>
+<!-- Close button for the modal context -->
+<button class="rounded-full bg-white/5 p-2 hover:bg-white/10 transition-colors border border-white/5 text-[#b6b1a0] hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="relative z-10 flex-grow flex flex-col items-center justify-center p-6 text-center w-full">
+<div class="flex flex-col items-center max-w-4xl mx-auto animate-[fadeIn_1s_ease-out]">
+<!-- Success Icon in Glass Circle -->
+<div class="relative mb-12 group">
+<!-- Glow behind -->
+<div class="absolute -inset-4 bg-primary/20 blur-[40px] rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+<!-- Glass container -->
+<div class="glass-circle size-32 md:size-40 rounded-full flex items-center justify-center relative z-10 transition-transform duration-500 hover:scale-105">
+<!-- Inner ring for extra detail -->
+<div class="absolute inset-2 border border-primary/20 rounded-full"></div>
+<!-- Checkmark Icon -->
+<span class="material-symbols-outlined text-primary !text-[64px] md:!text-[80px] drop-shadow-[0_0_15px_rgba(212,175,53,0.6)]">
+                        check
+                    </span>
+</div>
+</div>
+<!-- Headline -->
+<h1 class="font-display font-black text-4xl md:text-6xl lg:text-7xl tracking-widest leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-[#e8e6e1] to-[#b6b1a0] drop-shadow-2xl mb-6 uppercase">
+                L'Empire <br class="md:hidden"/>Vous Attend
+            </h1>
+<!-- Subtitle -->
+<p class="font-display text-[#b6b1a0] text-lg md:text-xl font-medium tracking-wide max-w-lg mb-12 leading-relaxed opacity-80 shimmer-text">
+                Votre demande a bien été reçue. <br/>Un producteur vous contactera sous 24h.
+            </p>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row gap-6 items-center w-full justify-center">
+<a class="group relative flex items-center justify-center overflow-hidden rounded-full px-8 py-4 bg-transparent border border-primary/40 text-primary font-bold tracking-wider uppercase text-sm min-w-[200px] transition-all duration-300 hover:bg-primary hover:text-vantablack hover:border-primary hover:shadow-[0_0_30px_rgba(212,175,53,0.4)]" href="#">
+<span class="relative z-10 flex items-center gap-2">
+                        Retour à l'accueil
+                    </span>
+</a>
+<a class="text-[#b6b1a0] hover:text-white text-sm font-medium tracking-wide border-b border-transparent hover:border-primary/50 transition-all pb-0.5" href="#">
+                    Voir notre portfolio
+                </a>
+</div>
+</div>
+</main>
+<!-- Footer / Legal (Minimal) -->
+<footer class="relative z-10 w-full py-8 px-6 text-center">
+<p class="text-[#b6b1a0]/40 text-xs tracking-widest uppercase">
+            © 2024 Studio Voix d'Or • Paris • Los Angeles
+        </p>
+</footer>
+</body></html>

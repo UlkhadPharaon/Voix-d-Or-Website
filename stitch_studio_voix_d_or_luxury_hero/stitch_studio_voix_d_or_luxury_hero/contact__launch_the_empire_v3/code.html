@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Studio Voix d'Or</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4af25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221c10",
+                        "vantablack": "#050505", // Approximating deep black
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "satoshi": ["Satoshi", "Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(244, 175, 37, 0.5)',
+                        'glow-intense': '0 0 40px rgba(244, 175, 37, 0.7)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for unique requirements */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gold-underline-input {
+            background: transparent;
+            border-bottom: 1px solid #f4af25;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+            padding-left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gold-underline-input:focus {
+            box-shadow: none;
+            border-bottom-width: 2px;
+            border-color: #ffd27d;
+        }
+
+        /* Ripple effect animation */
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(244, 175, 37, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(244, 175, 37, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(244, 175, 37, 0);
+            }
+        }
+
+        .btn-ripple:hover {
+            animation: ripple 1.5s infinite;
+        }
+        
+        /* Map glow pulse */
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(244, 175, 37, 0.3)); }
+            50% { filter: drop-shadow(0 0 30px rgba(244, 175, 37, 0.6)); }
+        }
+        
+        .map-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-hidden h-screen w-full">
+<div class="flex flex-col lg:flex-row h-full w-full relative">
+<!-- Navigation Overlay -->
+<header class="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-6 lg:px-10 lg:py-8 pointer-events-none">
+<div class="flex items-center gap-3 pointer-events-auto">
+<div class="w-8 h-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight font-satoshi uppercase">Studio Voix d'Or</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8 pointer-events-auto">
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase" href="#">Work</a>
+<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase" href="#">Studio</a>
+<a class="text-white text-sm font-medium tracking-wide uppercase border-b border-primary pb-0.5" href="#">Contact</a>
+</nav>
+</header>
+<!-- Left Pane: Vantablack & Map -->
+<div class="w-full lg:w-1/2 h-[40vh] lg:h-full bg-vantablack relative flex items-center justify-center overflow-hidden order-1 lg:order-none border-b lg:border-b-0 lg:border-r border-white/5">
+<!-- Subtle grid background -->
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#f4af25 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- Radial gradient for depth -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900/40 via-vantablack to-vantablack"></div>
+<div class="relative z-10 flex flex-col items-center justify-center w-full max-w-lg p-8 text-center">
+<!-- Map Container -->
+<div class="w-64 h-64 md:w-96 md:h-96 relative mb-8 map-glow">
+<!-- Abstract Globe/Map SVG -->
+<svg class="w-full h-full text-primary/90 fill-none stroke-current stroke-[0.5]" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-20 stroke-[0.2]" cx="100" cy="100" r="90"></circle>
+<circle class="opacity-10 stroke-[0.2]" cx="100" cy="100" r="70"></circle>
+<!-- Abstract land masses / geometric representation of Ouagadougou area -->
+<path class="opacity-80 fill-primary/10" d="M60,90 Q80,60 110,70 T150,90 T120,130 T70,120 Z"></path>
+<path class="opacity-30 stroke-[0.2] stroke-dashed" d="M100,100 L100,20 M100,100 L180,100 M100,100 L20,100 M100,100 L100,180" stroke-dasharray="2,2"></path>
+<!-- Location Pin -->
+<circle class="fill-white animate-ping" cx="100" cy="100" r="2"></circle>
+<circle class="fill-primary" cx="100" cy="100" r="4"></circle>
+</svg>
+</div>
+<div class="space-y-2">
+<p class="text-primary font-satoshi font-bold tracking-[0.2em] text-xs uppercase">Location Anchored</p>
+<h1 class="text-3xl md:text-5xl font-satoshi font-black text-white tracking-tighter">OUAGADOUGOU HQ</h1>
+<p class="text-white/40 font-mono text-xs tracking-widest mt-2">12°22'N 1°31'W • SECTOR 4</p>
+</div>
+</div>
+<!-- Decorative corner elements -->
+<div class="absolute bottom-10 left-10 w-24 h-[1px] bg-white/10 hidden lg:block"></div>
+<div class="absolute bottom-10 left-10 w-[1px] h-24 bg-white/10 hidden lg:block"></div>
+</div>
+<!-- Right Pane: Glass Form -->
+<div class="w-full lg:w-1/2 h-auto min-h-[60vh] lg:h-full relative flex items-center justify-center p-6 lg:p-20 order-2 lg:order-none">
+<!-- Blurred Studio Background -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" data-alt="Dark moody recording studio with bokeh lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtlBV-bFe6oUXBglg1TQRRVko84XX1dLU_fMjYurSG7vJfl_vFRcLW55XkmFxxSl8c54I--MOdY7Hh4bGsn0gE9iB17HX3ZqLWF5Zv_XXsJ-q-l9hCilytHT04tt5mW-VzlWLwe_gKXCT4eHqfZNCkyQI70ZgwqcojVQsUzOlbbwTkTm7-gNvb3Z6MyO_c36tetpji170WAeZ2CraHm14urDCQHOSdqLxPSixHdDYVLUYNqHfPcOdjeWdBd_RHZYJ70HvCM8CJ2V8Z');">
+<div class="absolute inset-0 bg-background-dark/80 backdrop-blur-sm"></div>
+</div>
+<!-- Glass Form Container -->
+<div class="relative w-full max-w-lg glass-panel rounded-2xl p-8 md:p-12 shadow-2xl border-t border-white/10">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-[60px] pointer-events-none"></div>
+<div class="relative z-10">
+<div class="mb-10">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">Inquiry V3</span>
+<h2 class="text-3xl md:text-4xl font-satoshi font-bold text-white mb-2">Launch the Empire</h2>
+<p class="text-white/60 font-light text-sm md:text-base">Initiate the protocol. Our team is standing by.</p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group">
+<label class="block text-xs font-medium text-white/50 uppercase tracking-widest mb-1 group-focus-within:text-primary transition-colors" for="name">Name</label>
+<input class="w-full font-satoshi text-lg text-white placeholder-white/20 gold-underline-input focus:ring-0" id="name" placeholder="Your Name" type="text"/>
+</div>
+<div class="group">
+<label class="block text-xs font-medium text-white/50 uppercase tracking-widest mb-1 group-focus-within:text-primary transition-colors" for="company">Organization</label>
+<input class="w-full font-satoshi text-lg text-white placeholder-white/20 gold-underline-input focus:ring-0" id="company" placeholder="Company Name" type="text"/>
+</div>
+</div>
+<div class="group">
+<label class="block text-xs font-medium text-white/50 uppercase tracking-widest mb-1 group-focus-within:text-primary transition-colors" for="email">Secure Contact</label>
+<input class="w-full font-satoshi text-lg text-white placeholder-white/20 gold-underline-input focus:ring-0" id="email" placeholder="email@domain.com" type="email"/>
+</div>
+<div class="group">
+<label class="block text-xs font-medium text-white/50 uppercase tracking-widest mb-1 group-focus-within:text-primary transition-colors" for="budget">Investment Scale</label>
+<select class="w-full font-satoshi text-lg text-white bg-transparent gold-underline-input focus:ring-0 py-2 [&amp;&gt;option]:bg-[#221c10] [&amp;&gt;option]:text-white" id="budget">
+<option class="text-white/20" disabled="" selected="" value="">Select Range</option>
+<option value="10-50k">$10k - $50k</option>
+<option value="50-100k">$50k - $100k</option>
+<option value="100k+">$100k+</option>
+</select>
+</div>
+<div class="pt-6">
+<button class="group relative w-full h-14 bg-primary text-background-dark font-satoshi font-black text-sm uppercase tracking-[0.15em] flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-[1.02] btn-ripple" type="button">
+<span class="relative z-10 flex items-center gap-3">
+                                    Lancer l'Empire
+                                    <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+<!-- Shine effect -->
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer Links for Mobile (hidden on desktop usually, but nice for context) -->
+<div class="absolute bottom-6 w-full text-center lg:hidden">
+<p class="text-white/20 text-xs">Studio Voix d'Or © 2024</p>
+</div>
+</div>
+</div>
+</body></html>

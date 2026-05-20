@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or | Modular Project Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "vantablack": "#050505",
+                        "champagne-gold": "#D4AF37",
+                        "champagne-gold-light": "#E5C560",
+                        "metallic-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "extended": ["Syncopate", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'faso-pattern': "repeating-linear-gradient(45deg, #0a0a0a 0px, #0a0a0a 10px, #0f0f0f 10px, #0f0f0f 20px)",
+                        'metallic-gradient': "linear-gradient(135deg, #121212 0%, #050505 100%)",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .faso-overlay {
+                background-image: 
+                    linear-gradient(30deg, transparent 40%, rgba(212, 175, 55, 0.03) 40%, rgba(212, 175, 55, 0.03) 45%, transparent 45%),
+                    linear-gradient(-30deg, transparent 40%, rgba(212, 175, 55, 0.02) 40%, rgba(212, 175, 55, 0.02) 45%, transparent 45%);
+                background-size: 60px 100px;
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .module-tile:hover .project-reel {
+                max-height: 500px;
+                opacity: 1;
+                margin-top: 2rem;
+            }
+            .sharp-outline {
+                box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+            }
+            .sharp-outline:hover {
+                box-shadow: 0 0 0 1px rgba(212, 175, 55, 1), 0 0 20px rgba(212, 175, 55, 0.15);
+            }
+        }
+    </style>
+</head>
+<body class="bg-vantablack font-display text-white min-h-screen selection:bg-champagne-gold selection:text-vantablack overflow-x-hidden">
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-faso-pattern opacity-30"></div>
+<div class="absolute inset-0 faso-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-vantablack via-transparent to-vantablack"></div>
+</div>
+<nav class="relative z-50 w-full border-b border-champagne-gold/10 bg-vantablack/80 backdrop-blur-md">
+<div class="max-w-[1600px] mx-auto px-10 h-24 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-champagne-gold flex items-center justify-center bg-champagne-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+<span class="material-symbols-outlined text-champagne-gold text-xl">graphic_eq</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold tracking-[0.2em] text-sm uppercase font-extended">Studio Voix d'Or</span>
+<span class="text-champagne-gold/60 text-[10px] tracking-widest uppercase">Elite Hub</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-[10px] font-bold uppercase tracking-[0.3em] text-champagne-gold" href="#">Portfolio</a>
+<a class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors" href="#">Manifesto</a>
+<a class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors" href="#">Process</a>
+</div>
+<button class="px-8 py-3 rounded-sm border border-champagne-gold/30 bg-transparent hover:bg-champagne-gold/10 transition-all">
+<span class="text-[10px] font-bold uppercase tracking-widest text-champagne-gold">Inquire</span>
+</button>
+</div>
+</nav>
+<main class="relative z-10 max-w-[1600px] mx-auto px-10 py-20">
+<header class="mb-20">
+<h1 class="font-extended text-5xl md:text-7xl font-bold tracking-tighter text-white mb-4">
+                MODULAR <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-champagne-gold to-white/20">PROJECT HUB</span>
+</h1>
+<div class="w-24 h-[1px] bg-champagne-gold mb-8"></div>
+</header>
+<div class="grid grid-cols-12 gap-8 items-start">
+<div class="col-span-12 lg:col-span-7 group module-tile">
+<div class="relative bg-metallic-dark sharp-outline p-12 transition-all duration-500 cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="text-8xl font-extended font-bold text-white">01</span>
+</div>
+<div class="relative z-10">
+<span class="text-champagne-gold text-xs font-extended tracking-[0.4em] uppercase mb-4 block">Archive 2024</span>
+<h2 class="text-4xl md:text-5xl font-extended font-bold text-white mb-6">COMMERCIAL</h2>
+<p class="text-white/40 max-w-sm text-sm uppercase tracking-widest leading-relaxed">High-fidelity brand storytelling for global visionaries.</p>
+</div>
+<div class="project-reel max-h-0 opacity-0 transition-all duration-700 ease-in-out flex gap-6 overflow-x-auto hide-scrollbar">
+<div class="flex-shrink-0 w-72 h-48 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 group-hover/item:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMe3L5bOZSWwVwEvlIzB0g0_07W27QWV9O2gVAr9w9ObPhUzqGhras1LXW9xY4FBl22BGQk18DFr0UJ1YCkZDFALCtd8FTlvyVQYU3xV3EOqBgNEz9ua22MOYRgnqf0A69NSJKk3c3EwcQZtdTH2AjBPOY8XNopD3Om98Tfof__Oc316GYWmw45-0yL6-s3DgbLaD9VaQl5S7MdXctkbD9wgFG3r9dGTxbHacmNI0jk5mC4E1Hov265XgBIdVmCHkp3Ssol0uZLwgu"/>
+<div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
+<span class="text-[10px] font-extended tracking-widest">VIEW PROJECT</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-72 h-48 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 group-hover/item:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ6_7KzfpWj6aXYyxiMDgn0GC8Y0ktQpVB3sBHbyOwwdfkFuDIDLMkF7mYmxGSzTJTiM3-eUMmuwg3t_gM_kwqTLb-sCwz1fZBP6MwG8qYv_9herEUhNQRQC6w6NfEK63fX2TvzLxFC52LNEkbqBBxtJLULv_nWfx8Y7rzbBkhmw6eQoETOd1mpGpScfvdPDSY96u4wQoS9FyAhhzKiA7fjqVxsQMaGVw_OnZ3fNjb7UzpBlIn-O8vvEJbfgZQ0FemuLoJ23iIMygs"/>
+<div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
+<span class="text-[10px] font-extended tracking-widest">VIEW PROJECT</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-72 h-48 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 group-hover/item:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqW7ce3VW_mq3C4YJ24gOeWHFkHGBfLtfvMLqNpQNg6_Wt5gjVFK07EJ8wgkFgZULozyqFzvpZT_uIt-8HC00qwA6OxG1KJPyMpSW9zAtKXOHG2bN1TbMv01HgFlj6mVahNCvu3ZeJuvb0OiaR8V6W5NdjmH1U-lQ1ehXN5NjGuZ_pE3m-8agXk-vENO3s_l8Mlk_yWEKyIANnGHCFNNGWTrJtPaslGXE05vqSBCa29s5XknV725mKnSpxgQDK6QlyldEN3aBIUVC"/>
+<div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
+<span class="text-[10px] font-extended tracking-widest">VIEW PROJECT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 mt-0 lg:mt-24 group module-tile">
+<div class="relative bg-metallic-dark sharp-outline p-12 transition-all duration-500 cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="text-7xl font-extended font-bold text-white">02</span>
+</div>
+<div class="relative z-10">
+<span class="text-champagne-gold text-xs font-extended tracking-[0.4em] uppercase mb-4 block">Visual Essays</span>
+<h2 class="text-3xl md:text-4xl font-extended font-bold text-white mb-4">DOCUMENTARY</h2>
+<p class="text-white/40 text-sm uppercase tracking-widest leading-relaxed">Raw human experiences captured in 8K RAW.</p>
+</div>
+<div class="project-reel max-h-0 opacity-0 transition-all duration-700 ease-in-out flex gap-6 overflow-x-auto hide-scrollbar">
+<div class="flex-shrink-0 w-64 h-40 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ6_7KzfpWj6aXYyxiMDgn0GC8Y0ktQpVB3sBHbyOwwdfkFuDIDLMkF7mYmxGSzTJTiM3-eUMmuwg3t_gM_kwqTLb-sCwz1fZBP6MwG8qYv_9herEUhNQRQC6w6NfEK63fX2TvzLxFC52LNEkbqBBxtJLULv_nWfx8Y7rzbBkhmw6eQoETOd1mpGpScfvdPDSY96u4wQoS9FyAhhzKiA7fjqVxsQMaGVw_OnZ3fNjb7UzpBlIn-O8vvEJbfgZQ0FemuLoJ23iIMygs"/>
+</div>
+<div class="flex-shrink-0 w-64 h-40 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMe3L5bOZSWwVwEvlIzB0g0_07W27QWV9O2gVAr9w9ObPhUzqGhras1LXW9xY4FBl22BGQk18DFr0UJ1YCkZDFALCtd8FTlvyVQYU3xV3EOqBgNEz9ua22MOYRgnqf0A69NSJKk3c3EwcQZtdTH2AjBPOY8XNopD3Om98Tfof__Oc316GYWmw45-0yL6-s3DgbLaD9VaQl5S7MdXctkbD9wgFG3r9dGTxbHacmNI0jk5mC4E1Hov265XgBIdVmCHkp3Ssol0uZLwgu"/>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 lg:-mt-12 group module-tile">
+<div class="relative bg-metallic-dark sharp-outline p-12 transition-all duration-500 cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="text-7xl font-extended font-bold text-white">03</span>
+</div>
+<div class="relative z-10">
+<span class="text-champagne-gold text-xs font-extended tracking-[0.4em] uppercase mb-4 block">Aesthetic Motion</span>
+<h2 class="text-3xl md:text-4xl font-extended font-bold text-white mb-4">FASHION FILM</h2>
+<p class="text-white/40 text-sm uppercase tracking-widest leading-relaxed">Where couture meets cinematic innovation.</p>
+</div>
+<div class="project-reel max-h-0 opacity-0 transition-all duration-700 ease-in-out flex gap-6 overflow-x-auto hide-scrollbar">
+<div class="flex-shrink-0 w-80 h-44 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqW7ce3VW_mq3C4YJ24gOeWHFkHGBfLtfvMLqNpQNg6_Wt5gjVFK07EJ8wgkFgZULozyqFzvpZT_uIt-8HC00qwA6OxG1KJPyMpSW9zAtKXOHG2bN1TbMv01HgFlj6mVahNCvu3ZeJuvb0OiaR8V6W5NdjmH1U-lQ1ehXN5NjGuZ_pE3m-8agXk-vENO3s_l8Mlk_yWEKyIANnGHCFNNGWTrJtPaslGXE05vqSBCa29s5XknV725mKnSpxgQDK6QlyldEN3aBIUVC"/>
+</div>
+<div class="flex-shrink-0 w-80 h-44 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ6_7KzfpWj6aXYyxiMDgn0GC8Y0ktQpVB3sBHbyOwwdfkFuDIDLMkF7mYmxGSzTJTiM3-eUMmuwg3t_gM_kwqTLb-sCwz1fZBP6MwG8qYv_9herEUhNQRQC6w6NfEK63fX2TvzLxFC52LNEkbqBBxtJLULv_nWfx8Y7rzbBkhmw6eQoETOd1mpGpScfvdPDSY96u4wQoS9FyAhhzKiA7fjqVxsQMaGVw_OnZ3fNjb7UzpBlIn-O8vvEJbfgZQ0FemuLoJ23iIMygs"/>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 group module-tile">
+<div class="relative bg-metallic-dark sharp-outline p-12 transition-all duration-500 cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="text-7xl font-extended font-bold text-white">04</span>
+</div>
+<div class="relative z-10">
+<span class="text-champagne-gold text-xs font-extended tracking-[0.4em] uppercase mb-4 block">Sonic Visuals</span>
+<h2 class="text-3xl md:text-4xl font-extended font-bold text-white mb-4">MUSIC VIDEO</h2>
+<p class="text-white/40 text-sm uppercase tracking-widest leading-relaxed">Vibrant rhythms translated into visual poetry.</p>
+</div>
+<div class="project-reel max-h-0 opacity-0 transition-all duration-700 ease-in-out flex gap-6 overflow-x-auto hide-scrollbar">
+<div class="flex-shrink-0 w-64 h-48 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMe3L5bOZSWwVwEvlIzB0g0_07W27QWV9O2gVAr9w9ObPhUzqGhras1LXW9xY4FBl22BGQk18DFr0UJ1YCkZDFALCtd8FTlvyVQYU3xV3EOqBgNEz9ua22MOYRgnqf0A69NSJKk3c3EwcQZtdTH2AjBPOY8XNopD3Om98Tfof__Oc316GYWmw45-0yL6-s3DgbLaD9VaQl5S7MdXctkbD9wgFG3r9dGTxbHacmNI0jk5mC4E1Hov265XgBIdVmCHkp3Ssol0uZLwgu"/>
+</div>
+<div class="flex-shrink-0 w-64 h-48 bg-vantablack border border-white/10 group/item relative overflow-hidden">
+<img alt="Project" class="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqW7ce3VW_mq3C4YJ24gOeWHFkHGBfLtfvMLqNpQNg6_Wt5gjVFK07EJ8wgkFgZULozyqFzvpZT_uIt-8HC00qwA6OxG1KJPyMpSW9zAtKXOHG2bN1TbMv01HgFlj6mVahNCvu3ZeJuvb0OiaR8V6W5NdjmH1U-lQ1ehXN5NjGuZ_pE3m-8agXk-vENO3s_l8Mlk_yWEKyIANnGHCFNNGWTrJtPaslGXE05vqSBCa29s5XknV725mKnSpxgQDK6QlyldEN3aBIUVC"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-32 pt-10 border-t border-white/5 flex flex-wrap justify-between items-end gap-8">
+<div class="flex flex-col gap-1 text-[10px] font-mono text-champagne-gold/40">
+<span>ENCODING: REDCODE RAW 8K</span>
+<span>ASPECT: 2.39:1 ANAMORPHIC</span>
+<span>BITRATE: 12-BIT COLOR DEPTH</span>
+</div>
+<div class="flex items-center gap-10">
+<div class="flex flex-col items-end">
+<span class="text-[10px] uppercase tracking-widest text-white/30 mb-2">Navigation System</span>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-champagne-gold"></div>
+<div class="w-2 h-2 rounded-full border border-white/20"></div>
+<div class="w-2 h-2 rounded-full border border-white/20"></div>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-sm border border-white/10 flex items-center justify-center text-white/40 hover:border-champagne-gold hover:text-champagne-gold transition-all">
+<span class="material-symbols-outlined text-sm">west</span>
+</button>
+<button class="w-12 h-12 rounded-sm border border-champagne-gold flex items-center justify-center text-champagne-gold hover:bg-champagne-gold hover:text-vantablack transition-all shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+<span class="material-symbols-outlined text-sm">east</span>
+</button>
+</div>
+</div>
+</footer>
+</main>
+<div class="fixed top-1/2 right-10 -translate-y-1/2 flex flex-col items-center gap-4 opacity-20 pointer-events-none hidden lg:flex">
+<span class="font-extended text-[10px] uppercase tracking-[0.5em] rotate-90 mb-12">Scroll Explorer</span>
+<div class="w-[1px] h-32 bg-gradient-to-b from-champagne-gold to-transparent"></div>
+</div>
+
+</body></html>

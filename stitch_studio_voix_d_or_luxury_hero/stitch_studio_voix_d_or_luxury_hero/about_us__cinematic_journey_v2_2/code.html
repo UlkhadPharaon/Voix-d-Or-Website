@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or - Cinematic Journey</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cinzel:wght@400;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d434",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#050505",
+                        "secondary-dark": "#1a1a1a",
+                        "champagne": "#e8dca8",
+                        "sepia-dark": "#2d241a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "cinzel": ["Cinzel", "serif"],
+                        "sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'carbon-fiber': "radial-gradient(circle at center, transparent 0%, #050505 100%), repeating-linear-gradient(45deg, rgba(20,20,20, 0.1) 0px, rgba(20,20,20, 0.1) 2px, transparent 2px, transparent 4px), repeating-linear-gradient(-45deg, rgba(20,20,20, 0.1) 0px, rgba(20,20,20, 0.1) 2px, transparent 2px, transparent 4px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">.cinematic-glow {
+    text-shadow: 0 0 15px rgba(232, 220, 168, 0.4)
+    }
+.gilded-text {
+    background: linear-gradient(180deg, #fef9e7 0%, #e8dca8 45%, #b59846 55%, #fef9e7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.8))
+    }
+.sepia-overlay {
+    background: linear-gradient(to bottom, rgba(45, 36, 26, 0.4), rgba(5, 5, 5, 0.95))
+    }
+.embossed {
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.7)
+    }
+.grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBUriLjCM1jajopHJDHW8VjS08VctWWeFm9cCuXd8w6lTYK25xgZCjoihtuzMfwj1lx11kKWUv1p0DG27NKMLXGTBLQKenMyPWhVhbQRRI4CPhcffpfTiHqRSQN6DQrhYblEOnI-kdVIZ3MTHgZ3WTYJYNqQ0LGX-QiIIAm2-Mn1bIiU6_6EXgETCsCUsUP_VpvBvLKzHPuMOoONX6bY5ebANQTCEECm571R1DyHTZTW9W8oZktjpdYhqvaTx55Ve97dELmxHNNslqm);
+    opacity: 0.15;
+    mix-blend-mode: soft-light
+    }</style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-x-hidden">
+<header class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">camera_roll</span>
+<h2 class="text-champagne font-cinzel text-xl font-bold tracking-[0.2em] uppercase">Studio Voix d'Or</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-gray-400 hover:text-champagne text-[10px] uppercase tracking-[0.3em] transition-colors" href="#">The Work</a>
+<a class="text-white text-[10px] uppercase tracking-[0.3em] font-bold border-b border-primary/50 pb-1" href="#">The Studio</a>
+<a class="text-gray-400 hover:text-champagne text-[10px] uppercase tracking-[0.3em] transition-colors" href="#">Philosophy</a>
+<a class="text-gray-400 hover:text-champagne text-[10px] uppercase tracking-[0.3em] transition-colors" href="#">Contact</a>
+</nav>
+<button class="hidden md:flex border border-primary/40 hover:bg-primary/10 text-primary px-8 py-2.5 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] transition-all">
+            Private Inquiry
+        </button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 w-full h-full z-0 grayscale sepia brightness-[0.4] contrast-[1.1]">
+<img alt="Grand ornate film set interior" class="w-full h-full object-cover" data-alt="A grand movie palace with ornate gold details and velvet curtains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmxysJfZNNpTkJ_908OZlXQoLPFkHjG69r39lrNIppYOIKONFWOkOq2L5ROzz-uOPZ2wjqtwycrE7Mnp3obdEQ2DmnYhY1gG0bNQ75qbQbj2qM3BOVoOv399pU86-X2o8dK7-t5cbpwU-TCeq3DamM-bFbWSh5HImpO5shRI3t8M9pjkcIhbfFIqNbJKXXKYnlMZrTXQ165mVJ6b3aRny8xN24pojVIAvRUkvzoQMsF8jeV5Cp2_VlIH17mi40goEgBuC2wcEwgkiD"/>
+</div>
+<div class="absolute inset-0 sepia-overlay z-10"></div>
+<div class="grain-overlay"></div>
+<div class="absolute top-[20%] left-[15%] w-[600px] h-[600px] bg-champagne/10 rounded-full blur-[150px] z-0 pointer-events-none"></div>
+<div class="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+<div class="relative z-20 container mx-auto px-6 text-center mt-20">
+<div class="inline-flex flex-col items-center mb-10">
+<span class="text-primary font-cinzel text-xs tracking-[0.5em] uppercase mb-4 opacity-80">Presenting</span>
+<div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+</div>
+<div class="mb-10">
+<h1 class="font-serif italic text-7xl md:text-9xl lg:text-[10rem] leading-[0.9] gilded-text select-none py-4">
+                    The<br/>
+<span class="not-italic font-bold tracking-tight">Visionary</span>
+</h1>
+</div>
+<div class="max-w-2xl mx-auto space-y-8">
+<p class="text-lg md:text-2xl text-champagne/80 font-serif italic leading-relaxed tracking-wide cinematic-glow">
+                    "Crafting the echoes of tomorrow in the light of yesterday."
+                </p>
+<div class="flex flex-col items-center gap-6">
+<p class="text-gray-400 font-light text-sm uppercase tracking-[0.3em] max-w-lg leading-loose">
+                        An established legacy of <span class="text-white border-b border-primary/30">prestigious storytelling</span> and cinematic opulence, curated for the modern avant-garde.
+                    </p>
+<div class="mt-8">
+<button class="group relative px-12 py-5 overflow-hidden transition-all">
+<div class="absolute inset-0 border border-champagne/30 group-hover:border-champagne/60 transition-colors"></div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-cinzel font-bold text-champagne tracking-[0.4em] uppercase">Begin The Premiere</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-12 z-20 hidden lg:block">
+<div class="flex items-center gap-4 text-white/30 font-cinzel text-[10px] tracking-[0.4em] uppercase">
+<span class="w-12 h-px bg-white/20"></span>
+<span>Established MCMXVIII</span>
+</div>
+</div>
+<div class="absolute bottom-12 right-12 z-20 hidden lg:block">
+<div class="flex items-center gap-4 text-white/30 font-cinzel text-[10px] tracking-[0.4em] uppercase">
+<span>Vois d'Or Archive No. 82</span>
+<span class="w-12 h-px bg-white/20"></span>
+</div>
+</div>
+</section>
+</main>
+
+</body></html>

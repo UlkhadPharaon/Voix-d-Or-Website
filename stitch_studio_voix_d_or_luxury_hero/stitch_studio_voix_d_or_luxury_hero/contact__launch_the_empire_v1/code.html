@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or - Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af35",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#050505", /* Darker to match Vantablack request */
+                        "surface-dark": "#171612",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #d4af35 0%, #ffeaa7 50%, #b8860b 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for interactions and visual polish */
+        .glass-panel {
+            background: rgba(23, 22, 18, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(212, 175, 53, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .input-underline {
+            border-bottom: 1px solid rgba(212, 175, 53, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .input-underline:focus-within {
+            border-bottom: 1px solid #d4af35;
+            box-shadow: 0 1px 0 0 #d4af35;
+        }
+
+        .magnetic-btn {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 0 15px rgba(212, 175, 53, 0.2);
+        }
+
+        .magnetic-btn:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 53, 0.5);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af35; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden min-h-screen flex flex-col">
+<!-- Navbar (Integrated minimally to fit context) -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 lg:px-12 backdrop-blur-sm bg-background-dark/80 border-b border-primary/10">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">graphic_eq</span>
+<h2 class="text-white text-lg font-bold tracking-[0.05em] uppercase">Studio Voix d'Or</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-400 hover:text-primary transition-colors tracking-wider uppercase" href="#">Portfolio</a>
+<a class="text-sm font-medium text-gray-400 hover:text-primary transition-colors tracking-wider uppercase" href="#">Services</a>
+<a class="text-sm font-medium text-gray-400 hover:text-primary transition-colors tracking-wider uppercase" href="#">Contact</a>
+</nav>
+</header>
+<main class="flex-grow flex flex-col lg:flex-row min-h-screen pt-16 lg:pt-0 relative">
+<!-- Left Pane: Visual & Info -->
+<div class="w-full lg:w-1/2 relative bg-background-dark flex flex-col justify-between p-8 lg:p-20 overflow-hidden order-2 lg:order-1">
+<!-- Background Map Visual -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 30% 30%, rgba(212, 175, 53, 0.15) 0%, transparent 60%);">
+<!-- Placeholder for 3D Map Image -->
+<div class="w-full h-full bg-cover bg-center bg-no-repeat opacity-60 mix-blend-screen" data-alt="Stylized 3D golden wireframe map of Ouagadougou city streets on black background" data-location="Ouagadougou" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhVoYLkjaOH1XDkXqJRLWOfPOSp4UWb4xNZTewmbNogro8Bn39AYGoDltiZbpe9bYa6QIJT4d0MzEnGC5aRfEJoJkvysN7KZMgSgXpHG_IUyxVmoJwi1ER-FhrH46sY6D4sR_iGmzsMfbh9UC7k4PnRdBJVhnZwMxsWxFnqn__lmLG7m5iJtjj79gxfhW-uIeW9kHZnixr1K4p9OuehnSDRRmiMoHwtnucTgOBbzkxJokf2da3egdOEOHN4TrZfllPcs8O0_44roTD'); filter: sepia(100%) hue-rotate(5deg) saturate(300%) contrast(120%);">
+</div>
+<!-- Overlay Gradient for text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 flex flex-col h-full justify-center mt-20 lg:mt-0">
+<div class="mb-12 lg:mb-24">
+<h1 class="text-5xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-[#e0e0e0] to-[#555] tracking-tight leading-none mb-6">
+                        L'ART<br/>DU SON
+                    </h1>
+<div class="h-1 w-24 bg-primary mb-8"></div>
+<p class="text-gray-400 text-lg max-w-md font-light leading-relaxed">
+                        L'excellence ne se dit pas, elle s'écoute. Basé au cœur de Ouaga 2000, nous sculptons l'identité sonore des leaders de demain.
+                    </p>
+</div>
+<!-- Cinematic Credits Style Contact Info -->
+<div class="space-y-8 mt-auto">
+<div class="flex flex-col gap-1 group cursor-default">
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase opacity-70 group-hover:opacity-100 transition-opacity">Localisation</span>
+<span class="text-white text-2xl font-light tracking-wide uppercase">Ouaga 2000, Secteur 15</span>
+</div>
+<div class="flex flex-col gap-1 group cursor-default">
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase opacity-70 group-hover:opacity-100 transition-opacity">Contact Direct</span>
+<span class="text-white text-2xl font-light tracking-wide font-mono">+226 00 00 00 00</span>
+</div>
+<div class="flex flex-col gap-1 group cursor-default">
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase opacity-70 group-hover:opacity-100 transition-opacity">Courriel</span>
+<a class="text-white text-2xl font-light tracking-wide uppercase hover:text-primary transition-colors" href="mailto:hello@voixdor.bf">hello@voixdor.bf</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Pane: Glass Form -->
+<div class="w-full lg:w-1/2 relative flex items-center justify-center p-6 lg:p-16 bg-[#12100a] order-1 lg:order-2">
+<!-- Background for Right Side -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Blurred dark studio background with bokeh lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDK5w_ZcgJNSxFogLrn-XozmyqSaLUZkdI-ZLMxuanjUFpCJe7FbAdeE6MTZRP-s5eCPIM32Hovtzp2RYofe-v5-x9wBjtRix9PWXQ8rk96lvIynMgGncDmWvjimknTBEIw2dlmiS2_agO8YHnfFF6mfB8U62FCc8CFvIk5HAp5vFrfTTd2jbCT7kKGzBK2nRKsq_2a6hZmnJB2PV0AvtY5Svw77knDI7G_XoAQhtGXh7ugSZ3_DOFyxY6fLOxnxciCJe7b0NzA9p9k'); filter: blur(20px) brightness(0.4);">
+</div>
+</div>
+<!-- Glass Form Container -->
+<div class="relative z-10 w-full max-w-lg glass-panel rounded-lg p-8 lg:p-12">
+<div class="mb-10">
+<h2 class="text-3xl font-bold text-white mb-2 tracking-tight">Initier le Projet</h2>
+<p class="text-gray-400 text-sm">Dites-nous en plus sur votre vision.</p>
+</div>
+<form class="space-y-8" onsubmit="event.preventDefault();">
+<!-- Name Input -->
+<div class="group relative">
+<input class="block w-full bg-transparent border-0 border-b border-white/20 px-0 py-3 text-white placeholder-transparent focus:ring-0 focus:border-primary transition-all peer pt-6 text-lg font-light" id="name" placeholder="Nom Complet" required="" type="text"/>
+<label class="absolute left-0 top-2 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-6 peer-placeholder-shown:uppercase-none peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:uppercase" for="name">
+                            Nom Complet
+                        </label>
+<div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary transition-all duration-500 peer-focus:w-full"></div>
+</div>
+<!-- Company & Email Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group relative">
+<input class="block w-full bg-transparent border-0 border-b border-white/20 px-0 py-3 text-white placeholder-transparent focus:ring-0 focus:border-primary transition-all peer pt-6 text-lg font-light" id="company" placeholder="Entreprise" type="text"/>
+<label class="absolute left-0 top-2 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-6 peer-placeholder-shown:uppercase-none peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:uppercase" for="company">
+                                Entreprise
+                            </label>
+<div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary transition-all duration-500 peer-focus:w-full"></div>
+</div>
+<div class="group relative">
+<input class="block w-full bg-transparent border-0 border-b border-white/20 px-0 py-3 text-white placeholder-transparent focus:ring-0 focus:border-primary transition-all peer pt-6 text-lg font-light" id="email" placeholder="Email Pro" required="" type="email"/>
+<label class="absolute left-0 top-2 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-6 peer-placeholder-shown:uppercase-none peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-focus:uppercase" for="email">
+                                Email
+                            </label>
+<div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary transition-all duration-500 peer-focus:w-full"></div>
+</div>
+</div>
+<!-- Budget Select -->
+<div class="group relative pt-4">
+<label class="block text-gray-500 text-xs uppercase tracking-widest mb-2" for="budget">Budget Estimé</label>
+<select class="block w-full bg-transparent border-0 border-b border-white/20 px-0 py-2 text-white focus:ring-0 focus:border-primary transition-all text-lg font-light cursor-pointer appearance-none" id="budget">
+<option class="bg-surface-dark text-gray-300">Sélectionner une plage</option>
+<option class="bg-surface-dark text-white">500k - 1M CFA</option>
+<option class="bg-surface-dark text-white">1M - 5M CFA</option>
+<option class="bg-surface-dark text-white">5M - 10M CFA</option>
+<option class="bg-surface-dark text-white">+10M CFA (Empire)</option>
+</select>
+<span class="absolute right-0 bottom-4 pointer-events-none text-primary material-symbols-outlined">expand_more</span>
+<div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary transition-all duration-500 group-focus-within:w-full"></div>
+</div>
+<!-- Message Textarea -->
+<div class="group relative pt-4">
+<textarea class="block w-full bg-transparent border-0 border-b border-white/20 px-0 py-2 text-white placeholder-transparent focus:ring-0 focus:border-primary transition-all peer pt-6 text-lg font-light resize-none" id="message" placeholder="Détails du projet" rows="3"></textarea>
+<label class="absolute left-0 top-6 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-10 peer-placeholder-shown:uppercase-none peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary peer-focus:uppercase" for="message">
+                            Détails du projet
+                        </label>
+<div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary transition-all duration-500 peer-focus:w-full"></div>
+</div>
+<!-- Submit Button -->
+<div class="pt-8 flex justify-end">
+<button class="magnetic-btn w-full md:w-auto px-10 py-4 bg-primary text-background-dark font-black uppercase tracking-wider rounded text-sm relative overflow-hidden group" type="submit">
+<span class="relative z-10 flex items-center justify-center gap-2">
+                                Lancer l'Empire
+                                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer / Bottom Note for Mobile -->
+<div class="lg:hidden bg-background-dark p-6 text-center border-t border-white/5">
+<p class="text-xs text-gray-600 uppercase tracking-widest">© 2024 Studio Voix d'Or</p>
+</div>
+</body></html>

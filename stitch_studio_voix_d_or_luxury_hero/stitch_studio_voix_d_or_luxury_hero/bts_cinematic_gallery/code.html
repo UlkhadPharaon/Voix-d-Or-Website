@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Voix d'Or - BTS Gallery</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Custom Font simulation for Monument Extended & Satoshi (using nearest logical matches or web font imports if available, otherwise utilizing font stack) -->
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&amp;f[]=monument-extended@400,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4af25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#050505", // Deep Vantablack approximation
+                        "surface-dark": "#181611",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "monument": ["Monument Extended", "Plus Jakarta Sans", "sans-serif"], // Custom font stack
+                        "satoshi": ["Satoshi", "Plus Jakarta Sans", "sans-serif"], // Custom font stack
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    backgroundImage: {
+                        'faso-dan-fani': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4af25' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Smooth horizontal scrolling */
+        .gallery-container {
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden h-screen flex flex-col">
+<!-- Background Pattern Layer -->
+<div class="fixed inset-0 pointer-events-none z-0 bg-faso-dan-fani bg-repeat opacity-50"></div>
+<!-- Top Navigation / Header -->
+<header class="relative z-20 flex items-center justify-between px-8 py-6 w-full bg-gradient-to-b from-background-dark/90 to-transparent">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">theaters</span>
+<h2 class="text-xs font-bold tracking-[0.2em] text-primary uppercase">Studio Voix d'Or</h2>
+</div>
+<h1 class="font-monument text-3xl md:text-5xl font-black text-white mt-2 tracking-wide leading-tight uppercase">
+                L'Envers <br/>Du Décor
+            </h1>
+</div>
+<nav class="hidden md:flex items-center gap-12">
+<a class="text-sm font-medium hover:text-primary transition-colors text-white/70" href="#">Archive</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-white/70" href="#">Series</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-white/70" href="#">Talent</a>
+<button class="flex items-center justify-center rounded-xl h-10 px-6 bg-primary text-background-dark text-sm font-bold hover:bg-white transition-colors">
+                Book Studio
+            </button>
+</nav>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<!-- Main Content Area: Horizontal Scroll Gallery -->
+<main class="relative z-10 flex-1 flex flex-col justify-center w-full h-full pb-10">
+<!-- Scroll Container -->
+<div class="gallery-container w-full overflow-x-auto no-scrollbar flex items-center px-8 md:px-16 gap-6 md:gap-10 h-[65vh] md:h-[70vh] snap-x snap-mandatory">
+<!-- Intro Text Card -->
+<div class="snap-center shrink-0 w-[300px] flex flex-col justify-center gap-6 mr-8">
+<p class="font-satoshi text-xl font-light text-white/80 leading-relaxed">
+                    An intimate look behind the lens. Explore the raw moments, the lighting setups, and the quiet pauses that build our cinematic universe.
+                </p>
+<div class="flex items-center gap-3 text-primary">
+<span class="text-sm font-bold uppercase tracking-widest">Start Scrolling</span>
+<span class="material-symbols-outlined animate-pulse">arrow_right_alt</span>
+</div>
+</div>
+<!-- Card 1 -->
+<div class="snap-center shrink-0 group relative w-[320px] md:w-[400px] h-full rounded-xl overflow-hidden border border-[#f4af25]/40 transition-all duration-500 hover:border-[#f4af25] hover:shadow-[0_0_30px_rgba(244,175,37,0.15)] cursor-none">
+<img alt="Cinematographer adjusting camera lens in dark studio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" data-alt="Cinematographer adjusting camera lens in dark studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL48LuvKMJBPmbtl4jqnZLk61LwrAi12DosWuWuxyLHr218Ha4J6m_zAZVhRu3f-equF0N95rocHb3ni-bB27pJk1aopUZUakIrtPt59-9yVAuxhIhskvFRMknTzTKJYC4poEJ_bGi8yVo8EIHVjMVnhDe03FIMMoAaY_cI6VAwCLSihdOMbI0KxjTpqbLi--v1qgJX_tK9i1Lc52EEtI7SAuHb166zhRHNxvdF4jaICWh2OIrGu5_QD40AB8jbPQOjuyIoCwhG9JG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<!-- Hover Overlay -->
+<div class="absolute bottom-0 left-0 right-0 glass-panel p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+<h3 class="font-monument text-lg text-white mb-2">Focus Pull</h3>
+<div class="grid grid-cols-2 gap-y-2 text-xs font-satoshi text-gray-300">
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Gear</span>
+                            Arri Alexa 35
+                        </div>
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Location</span>
+                            Dakar, SN
+                        </div>
+<div class="col-span-2">
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Note</span>
+                            Low light test, T1.4
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center shrink-0 group relative w-[320px] md:w-[400px] h-full rounded-xl overflow-hidden border border-[#f4af25]/40 transition-all duration-500 hover:border-[#f4af25] hover:shadow-[0_0_30px_rgba(244,175,37,0.15)]">
+<img alt="Dramatic silhouette of director pointing on set" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" data-alt="Dramatic silhouette of director pointing on set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqI9trjJwmbM3tNLsEeTW23qKPYqBhHEafs8Oz5VLyg8CD7-sKiZIixrUEYkNidnRCDHCT8pjKFKTNM22ibfYb0YNg8SXG_oxwNJ-9i2sefozOGE-jTfh4_eMXNI06FLIBVdcx42x4s5gpQs1BtG852Gws__mrVhWvbslSDbU8nNzb4CsRdqo0uf29FO7u6RB9IubhiWEAdF6oupK4y4hV6H_qrBr340HWFxJUXubUZ12SNlQA1JLw1YUwgyhuOE-zltFXvOjTdq-W"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<!-- Hover Overlay -->
+<div class="absolute bottom-0 left-0 right-0 glass-panel p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+<h3 class="font-monument text-lg text-white mb-2">The Vision</h3>
+<div class="grid grid-cols-2 gap-y-2 text-xs font-satoshi text-gray-300">
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Role</span>
+                            Director
+                        </div>
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Location</span>
+                            Studio A
+                        </div>
+<div class="col-span-2">
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Scene</span>
+                            Opening Sequence, Take 4
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-center shrink-0 group relative w-[320px] md:w-[400px] h-full rounded-xl overflow-hidden border border-[#f4af25]/40 transition-all duration-500 hover:border-[#f4af25] hover:shadow-[0_0_30px_rgba(244,175,37,0.15)]">
+<img alt="Overhead view of film set lighting rig and scaffolding" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" data-alt="Overhead view of film set lighting rig and scaffolding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtdgGLwneikEBcadAvySanRapfTI-TSioQZqKKDTLnqP20JSSZUYz7xYXe-knan8_Ovt70MdRX_QPINOKnF0by1IQcq00kfpDvmBLfYrmeOkNQUPjTxuPv9NXPvHcrWTej_vtSPYAFb-w34yummCQ6JLc1IgJwFTj3iNkZlgXz7QzuNoY1SnvlRmUz-wJr_XDLqFN8BPkDgzkRxCyIJy-wZKGEVT828pWn7CBYrlcvqC-WL5qdG23t1_JnqtIy_rQsjc4iQi7UunNm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<!-- Hover Overlay -->
+<div class="absolute bottom-0 left-0 right-0 glass-panel p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+<h3 class="font-monument text-lg text-white mb-2">Rigging</h3>
+<div class="grid grid-cols-2 gap-y-2 text-xs font-satoshi text-gray-300">
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Dept</span>
+                            Grip &amp; Electric
+                        </div>
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Time</span>
+                            04:30 AM
+                        </div>
+<div class="col-span-2">
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Setup</span>
+                            Skypanel S60 Array
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="snap-center shrink-0 group relative w-[320px] md:w-[400px] h-full rounded-xl overflow-hidden border border-[#f4af25]/40 transition-all duration-500 hover:border-[#f4af25] hover:shadow-[0_0_30px_rgba(244,175,37,0.15)]">
+<img alt="Film reel close up with vintage aesthetic" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" data-alt="Film reel close up with vintage aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMwMyTP30Ids8u_Dn2T5G0vH3GX5voXcE1wr-kgIGtIDd9WgomDKjd3AH1JV6umZNWpk5U1xT7sSS6Nrfiph5tuxYhvvFAp44-hLkCXBsEvBe0XafiE2E5d108P8ILDpz6y6KgN_utxczIQ3vysnlLA2Fc7REgGoyfPIsq_KXy3zRA5i9KHWP4jbXoVNJVoVuDfx3PjmZO9EIKWT-9Rn2fMVzcdCjcKCha6_uqtI6o2BflzTkCBISRxBroW4vBrD5Jf0GP6YWHQTDU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<!-- Hover Overlay -->
+<div class="absolute bottom-0 left-0 right-0 glass-panel p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+<h3 class="font-monument text-lg text-white mb-2">Analog Texture</h3>
+<div class="grid grid-cols-2 gap-y-2 text-xs font-satoshi text-gray-300">
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Format</span>
+                            16mm Kodak Vision3
+                        </div>
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Dev</span>
+                            Push +1
+                        </div>
+<div class="col-span-2">
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Project</span>
+                            Voix d'Or Heritage
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="snap-center shrink-0 group relative w-[320px] md:w-[400px] h-full rounded-xl overflow-hidden border border-[#f4af25]/40 transition-all duration-500 hover:border-[#f4af25] hover:shadow-[0_0_30px_rgba(244,175,37,0.15)]">
+<img alt="Abstract lighting bokeh and camera lens flare" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" data-alt="Abstract lighting bokeh and camera lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOP6HIEv4Thg_oB2mokM5-PMBaGzrXC73UvG0VvacqPJeIbqVCWhnAqjaud3VNIrbMahh0L8ELYBRUxuoXBYbMmTjR4eZ_KKAzu8s047ZoUrL0RiuvruOhr6n7zflIWt9aQ3Gy5xPfEmQr_Puc1j-3A6nTLwwPtxuds08fkY-jW3QtEf17fZ78I52f3MRSaf3cR84Bdicq0P5wnAI-FASJIRYOIECMBiX-IcBcg3CJ0Psrb1vgCqiV97R9w1bOSIzQLyEbOkc89ZJ4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<!-- Hover Overlay -->
+<div class="absolute bottom-0 left-0 right-0 glass-panel p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+<h3 class="font-monument text-lg text-white mb-2">Atmosphere</h3>
+<div class="grid grid-cols-2 gap-y-2 text-xs font-satoshi text-gray-300">
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Effect</span>
+                            Haze &amp; Anamorphic
+                        </div>
+<div>
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Lens</span>
+                            Cooke Anamorphic
+                        </div>
+<div class="col-span-2">
+<span class="text-primary/70 block uppercase text-[10px] tracking-wider">Mood</span>
+                            Nostalgic / Dreamy
+                        </div>
+</div>
+</div>
+</div>
+<!-- End Spacer -->
+<div class="snap-center shrink-0 w-[100px] h-full flex items-center justify-center opacity-30">
+<div class="rotate-90 text-xs tracking-widest uppercase text-white whitespace-nowrap">End of Gallery</div>
+</div>
+</div>
+</main>
+<!-- Footer / Progress Bar -->
+<footer class="relative z-20 px-8 md:px-16 pb-8 pt-4 bg-gradient-to-t from-background-dark/90 to-transparent">
+<div class="w-full flex items-end gap-6">
+<div class="hidden md:flex flex-col gap-1 text-white/50 min-w-[120px]">
+<span class="text-[10px] uppercase tracking-wider font-satoshi">Gallery Progress</span>
+<span class="text-2xl font-monument text-white">35%</span>
+</div>
+<div class="flex-1 pb-3">
+<!-- Custom Progress Bar Visual -->
+<div class="relative w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-[35%] bg-primary shadow-[0_0_15px_rgba(244,175,37,0.8)] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] uppercase tracking-widest text-white/40 font-satoshi">
+<span>01. Introduction</span>
+<span>05. Final Cut</span>
+</div>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="size-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="size-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-black hover:border-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>

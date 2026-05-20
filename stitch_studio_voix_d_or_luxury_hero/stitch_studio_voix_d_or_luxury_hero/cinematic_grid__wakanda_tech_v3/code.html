@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cinematic Grid: Wakanda Tech V3</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d434",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#181711",
+                        "surface-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "1.5rem", "3xl": "1.5rem", "full": "9999px" },
+                    animation: {
+                        'smoke-1': 'float 20s ease-in-out infinite',
+                        'smoke-2': 'float 25s ease-in-out infinite reverse',
+                        'pulse-border': 'pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1.1)' },
+                            '50%': { transform: 'translate(20px, -20px) scale(1)' },
+                        },
+                        'pulse-border': {
+                            '0%, 100%': { borderColor: 'rgba(244, 212, 52, 0.4)' },
+                            '50%': { borderColor: 'rgba(244, 212, 52, 1)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Masonry Grid Logic since Tailwind Grid is strict rows/cols */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 280px;
+                grid-auto-flow: dense;
+            }
+
+            /* Bento Box Spans */
+            .col-span-2-desktop {
+                grid-column: span 2;
+            }
+            .row-span-2-desktop {
+                grid-row: span 2;
+            }
+        }
+
+        /* Hover Effects */
+        .bento-card .project-info {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bento-card:hover .project-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bento-card:hover {
+            z-index: 10;
+        }
+
+        /* Ambient Smoke Background Simulation */
+        .smoke-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(40, 40, 40, 0.4) 0%, rgba(24, 23, 17, 0) 60%);
+            mix-blend-mode: screen;
+            opacity: 0.4;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #181711; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #393628; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f4d434; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden selection:bg-primary selection:text-black">
+<!-- Ambient Smoke Layers -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute top-[-20%] left-[-10%] w-[80%] h-[80%] rounded-full smoke-bg animate-smoke-1 filter blur-[80px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[70%] h-[70%] rounded-full smoke-bg animate-smoke-2 filter blur-[100px] bg-primary/5"></div>
+<div class="absolute top-[40%] left-[30%] w-[50%] h-[50%] rounded-full bg-primary/5 filter blur-[120px] animate-pulse"></div>
+</div>
+<div class="relative z-10 flex min-h-screen flex-col">
+<!-- Navbar -->
+<header class="fixed top-0 w-full z-50 transition-all duration-300 bg-gradient-to-b from-background-dark/90 to-transparent backdrop-blur-[2px]">
+<div class="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-between">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="text-primary transition-transform duration-500 group-hover:rotate-180">
+<span class="material-symbols-outlined text-3xl">shutter_speed</span>
+</div>
+<h1 class="text-white text-xl font-bold tracking-widest leading-none">WAKANDA<span class="text-primary">.</span>TECH</h1>
+</div>
+<nav class="hidden md:flex items-center gap-12">
+<a class="text-sm font-medium tracking-widest text-white/60 hover:text-primary transition-colors" href="#">WORK</a>
+<a class="text-sm font-medium tracking-widest text-white/60 hover:text-primary transition-colors" href="#">STUDIO</a>
+<a class="text-sm font-medium tracking-widest text-white/60 hover:text-primary transition-colors" href="#">JOURNAL</a>
+</nav>
+<button class="hidden md:flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-primary hover:text-background-dark hover:border-primary transition-all duration-300 group">
+<span class="text-xs font-bold tracking-widest">INQUIRE</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-white hover:text-primary">
+<span class="material-symbols-outlined text-3xl">menu_open</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-32 pb-40 px-4 md:px-8 max-w-[1800px] mx-auto w-full">
+<!-- Hero Title (Subtle) -->
+<div class="mb-12 px-2">
+<h2 class="text-4xl md:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/20">
+                    SELECTED WORKS
+                </h2>
+<p class="text-primary/60 mt-2 text-sm md:text-base tracking-widest uppercase font-mono">Vol. 03 — Cinematic Grid</p>
+</div>
+<!-- Bento Grid -->
+<div class="masonry-grid">
+<!-- Item 1: Large Featured (Wide) -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] col-span-2-desktop row-span-2-desktop bg-surface-dark h-[400px] md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract neon fluid art with deep blues and purples" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIaYxZkiHI_2-ijHGxPaN9BY6PswAQA0fjqKh0JzKeeubt5HGyc3-vzxFtnI-ebQQ6KFHFR_0qyGFtJUB4PnhOEnwiRNeuyfgGzcKAxZsHM94FwS9zMt9E6rf8n3f08EmVuYH5esALr4bC6JkPIqhQVmRB-gTsVQsYDbyxkwFNvj2rukWifHHbmsc-PpI8t-3Kjhzkpg0Hv1eEYG2Y5NWj6e3zTbP-1CnChVPwlarY9KKypW_30UbluoXiEjZPbo6-P-csTBem5yhg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute top-6 right-6 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary text-4xl drop-shadow-lg">play_circle</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 project-info">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-1 rounded border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">Commercial</span>
+<span class="text-white/60 text-xs font-mono">02:14</span>
+</div>
+<h3 class="text-3xl font-bold text-white mb-1 tracking-tight">NEON TOKYO</h3>
+<p class="text-white/70 text-sm line-clamp-2 max-w-md">A futuristic exploration of light and sound in the heart of the metropolis.</p>
+</div>
+</article>
+<!-- Item 2: Vertical Portrait -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] row-span-2-desktop bg-surface-dark h-[400px] md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Fashion model portrait with dramatic lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2fJ7OXYrZzBf9gpN4hdJnzmaS4lHL32CFLQVwWC9g3JxqD1OTcdYUvvv8EduK_DT12DhDnawi7T402YpQuj_SzREGPYGMD3cufBajL0v4-VK2vqhCQrJfKKOYcXJs3WMK3NUCsHPwwlGNDmdaSfVxH9_1PrUcY6zXUhZQK9r3Pwj3dzcNeGufPk8hIqnVX022aAlqqf0cys-do8TJD6hupfEMChekfgKHKfXN3668V6SDLF9J0PRbbQsLFQmyKO1-co02mJDH0jpJ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-1 rounded border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">Fashion</span>
+</div>
+<h3 class="text-xl font-bold text-white tracking-tight">VOGUE NOIR</h3>
+</div>
+</article>
+<!-- Item 3: Standard Square -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] bg-surface-dark h-[280px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract 3D render of liquid gold" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmHvNzzJAbXwaLUNxQFzJK04qtZW8LaKwjghb95cJ1-j-rYJ22XGoT37ZabnXY9e6cuId1KzbySn9pmH5KK00cFj9SBE9YCuN_lQe22oZh-nhYqby8sybWf8boTT_bUNHig25FKGWFqtK6uJ_d4Z26FGxLNIWFmDI6zeyzHdwrlHfy5fzI5_7qCxPvgbQYn_f7__bZiW51RZCDeH8_g1uWl71q7FKHV5_h_RPsBDvIQc4FW6k5In5_LxmOnNGR99E39n11oKMgRX-H');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info">
+<h3 class="text-lg font-bold text-white tracking-tight">LIQUID GOLD</h3>
+<p class="text-primary text-xs font-mono mt-1">VFX Breakdown</p>
+</div>
+</article>
+<!-- Item 4: Standard Square -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] bg-surface-dark h-[280px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Retro computer setup in a dark room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB10MPpDYIxz23smHPRVm9OZv43QOYC5uHCPYOAbANd0QRmDduro8yXsrtM3GZ5PZodfdL73xftjRTx7fvxXKIF1YKbehRKUVOuajv_7FvRCZgPA-TfsAJxJOulqI3FbkXiltgxbE4anhfzwJNWiewadwV8qJNLgiqCUCVH8JXhdIK8TdYk56LmLekMVzcTxInFfVkl4a3q1PjRH4okqzyjprcCAyeoHq7Z0vpJCnElJ8BZPAdGMH5oo9qAzzQm7bC8-JoU3y4nK8z_');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info">
+<h3 class="text-lg font-bold text-white tracking-tight">CYBER 2077</h3>
+<p class="text-primary text-xs font-mono mt-1">Game Trailer</p>
+</div>
+</article>
+<!-- Item 5: Wide Landscape -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] col-span-2-desktop bg-surface-dark h-[280px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Mountain landscape during sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgmyycX1Zt9cozvWglK2b8_Ax8_NIZ6U0dhQRFb5Jx0n36DGE9RB1DV8FxZXk-rjUMkJX-KlsQaDiFctkonPnCV9Pm3WW9duK8TeSlDqw0DTClYzJq1LfS9nj3RgX02hnaOqYClOjxvQr68XqC655Swdb1JQ2L4HK4QGr02TCZ4NAi0F6ckJVgNMnxDpZoXAparodV24Orh8P5JdlWZEXGtI_YumG9djiCniZsauBUk9BIp36Gyr3L8x0xBw0VclwFCDAZNOO6y938');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info flex flex-col justify-end items-start h-full">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-1 rounded border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">Documentary</span>
+</div>
+<h3 class="text-2xl font-bold text-white tracking-tight">THE LAST EXPEDITION</h3>
+</div>
+</article>
+<!-- Item 6: Tall Portrait -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] row-span-2-desktop bg-surface-dark h-[400px] md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Black and white concert photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoRYNH4GTGlQKpv4b8B-uj5wWkEFZpw6hZTXbyzcE9o4juDdkPScQ_Y_CAltAiLGFRdd9z-k7jzGqNCWfo63N2a3ntoxsxDH3ontxl9GWF7nfbucawSpYUbiUFC3v-vmxURWmj8ZXZrw2NZq7PminCq-6Ysk2bFFdWYci6r2Ye3T87AJ7xRilqvCZYLBKQCz-m8McnXA1MzKZJLfz99NXKcPiTG9vh1koU0mWrDEOx6rRooeFjiXPJZYRB7kYuDYrwfd1Tng4j3EE1');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-1 rounded border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">Music Video</span>
+</div>
+<h3 class="text-xl font-bold text-white tracking-tight">ECHOES</h3>
+</div>
+</article>
+<!-- Item 7: Standard Square -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] bg-surface-dark h-[280px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Macro shot of a mechanical watch interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5s2RcncjtbpHHlKCZ-KXRO75ep1DVt8HwsAMedUqwT1gsRvXMmej3cUwguZ0p0ovEBvCfraPqz4xjAIXFmT-eNobBF0DzqNBVDKHaEtmoyf49Z3g4dKOF3gzdaYAkjdeDxBpkkNn8jUFQ-3XFrdxhxZaDAWdWu6u1JeB4VlvEqdXzA_rhPDq24lkTqwjb12hCe2vamw-VjI9r0-VHlyUK_AQbanh7O-cWsmhg2CRaQM8jOEjEmEGakLsIesDRb_-oPPrIEVx-0IpK');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info">
+<h3 class="text-lg font-bold text-white tracking-tight">PRECISION</h3>
+<p class="text-primary text-xs font-mono mt-1">Product Commercial</p>
+</div>
+</article>
+<!-- Item 8: Standard Square -->
+<article class="group bento-card relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(244,212,52,0.3)] bg-surface-dark h-[280px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Misty forest landscape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbUm0OH6X7inML6WAN3jj9aqI44Q243o9qohPsHr3IgbtDFDk3SX7c38g51RDRL1VZ1CXvdf97XNlDT_gIDz6QVfqENWS850Jr2x2DYqN50fNe_Mvo0X5AKB3D9GrXeKK92oqv-cg1rTuRAnMvscPY9vDMBX3aYm2hldaR8RN3mNiN9M708z9jrKA0E0Xx5jbMhOlrrM8SRdFwcH84FjS2_2XbfXc6_ex2QqCC1DiPua7fQ_L2YzRIOxA60tsOneX8QPM47QHbmT4_');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 project-info">
+<h3 class="text-lg font-bold text-white tracking-tight">ATMOS</h3>
+<p class="text-primary text-xs font-mono mt-1">Sound Design</p>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Glass Filter Bar -->
+<div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-auto">
+<div class="relative bg-background-dark/30 backdrop-blur-[40px] rounded-3xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] px-2 py-2 flex items-center justify-between md:justify-center overflow-x-auto scrollbar-hide">
+<div class="flex gap-1 md:gap-2">
+<button class="relative px-5 py-3 rounded-2xl bg-white/5 text-primary text-sm font-bold tracking-wider hover:bg-white/10 transition-all border border-primary/20 shadow-[0_0_15px_-5px_rgba(244,212,52,0.3)] whitespace-nowrap">
+                        ALL
+                        <div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+</button>
+<button class="px-5 py-3 rounded-2xl text-white/60 text-sm font-medium tracking-wider hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+                        COMMERCIAL
+                    </button>
+<button class="px-5 py-3 rounded-2xl text-white/60 text-sm font-medium tracking-wider hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+                        NARRATIVE
+                    </button>
+<button class="px-5 py-3 rounded-2xl text-white/60 text-sm font-medium tracking-wider hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+                        VFX
+                    </button>
+<button class="px-5 py-3 rounded-2xl text-white/60 text-sm font-medium tracking-wider hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">
+                        DOCS
+                    </button>
+<div class="w-[1px] h-8 bg-white/10 mx-2 self-center hidden md:block"></div>
+<button class="px-3 py-3 rounded-2xl text-white/40 hover:text-primary transition-all hidden md:block">
+<span class="material-symbols-outlined text-xl">search</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>
