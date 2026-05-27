@@ -165,7 +165,7 @@ export const AwaConcierge: React.FC = () => {
                                 >
                                     <div
                                         className={`max-w-[85%] p-3 text-sm leading-relaxed ${msg.role === 'user'
-                                            ? 'bg-gray-900 text-white rounded-2xl rounded-tr-sm'
+                                            ? 'bg-gray-900 text-white preserve-white rounded-2xl rounded-tr-sm'
                                             : 'bg-[#FAFAFA] border border-[#C5A059]/20 text-gray-900 rounded-2xl rounded-tl-sm shadow-sm'
                                             }`}
                                         style={{ color: msg.role === 'user' ? '#ffffff' : '#111827' }}
