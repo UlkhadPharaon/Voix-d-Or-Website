@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // TODO: INSERER LE SYSTEM PROMPT D'AWA ICI
 const SYSTEM_PROMPT = `# RÔLE ET IDENTITÉ
@@ -51,7 +50,7 @@ Tu incarnes le "Pan-Africanisme Futuriste". Tu t'adresses aux clients (réalisat
 - Si le client pose une question hors de cette base de connaissances, indique que la Direction traitera ce point spécifique lors de l'appel stratégique.
 - Clôture les échanges prometteurs par : "Je vous invite à initier le projet. Scellez notre collaboration ici : /le-pacte".`;
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '');
+const nvidiaApiKey = import.meta.env.VITE_NVIDIA_API_KEY || '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';
 
 interface Message {
     role: 'user' | 'model';
@@ -85,32 +84,43 @@ export const AwaConcierge: React.FC = () => {
         setIsLoading(true);
 
         try {
-            // L'API Gemini exige STRICTEMENT que l'historique commence par 'user'. 
-            // On filtre le message de bienvenue initial d'Awa ('model') pour éviter une erreur 400 Bad Request.
-            const formattedHistory = messages
-                .filter((msg, index) => !(index === 0 && msg.role === 'model'))
-                .map(msg => ({
-                    role: msg.role,
-                    parts: [{ text: msg.text }]
-                }));
+            // Construire l'historique au format attendu par NVIDIA NIM (OpenAI-compatible)
+            const apiMessages = [
+                { role: 'system', content: SYSTEM_PROMPT },
+                ...messages.map(msg => ({
+                    role: msg.role === 'model' ? 'assistant' : 'user',
+                    content: msg.text
+                })),
+                { role: 'user', content: userText }
+            ];
 
-            // Retour au modèle de pointe tel qu'exigé en février 2026
-            const modelStable = genAI.getGenerativeModel({
-                model: "gemini-3-flash-preview",
-                systemInstruction: SYSTEM_PROMPT
+            const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${nvidiaApiKey}`
+                },
+                body: JSON.stringify({
+                    model: "meta/llama-3.1-70b-instruct",
+                    messages: apiMessages,
+                    temperature: 0.5,
+                    max_tokens: 1024
+                })
             });
 
-            const chat = modelStable.startChat({
-                history: formattedHistory,
-            });
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error("NVIDIA API error response:", errorData);
+                throw new Error(`NVIDIA API response error: ${response.statusText}`);
+            }
 
-            const result = await chat.sendMessage(userText);
-            const responseText = result.response.text();
+            const data = await response.json();
+            const responseText = data.choices[0].message.content;
 
             setMessages(prev => [...prev, { role: 'model', text: responseText }]);
         } catch (error) {
             console.error("Erreur avec Awa:", error);
-            setMessages(prev => [...prev, { role: 'model', text: "Désolée, je rencontre un problème de connexion. Veuillez vérifier la clé API ou réessayer plus tard." }]);
+            setMessages(prev => [...prev, { role: 'model', text: "Désolée, je rencontre un problème de connexion. Veuillez réessayer plus tard." }]);
         } finally {
             setIsLoading(false);
         }
@@ -158,6 +168,7 @@ export const AwaConcierge: React.FC = () => {
                                             ? 'bg-gray-900 text-white rounded-2xl rounded-tr-sm'
                                             : 'bg-[#FAFAFA] border border-[#C5A059]/20 text-gray-900 rounded-2xl rounded-tl-sm shadow-sm'
                                             }`}
+                                        style={{ color: msg.role === 'user' ? '#ffffff' : '#111827' }}
                                     >
                                         {msg.text}
                                     </div>
