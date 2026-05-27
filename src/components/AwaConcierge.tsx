@@ -216,7 +216,7 @@ export const AwaConcierge: React.FC = () => {
                             onClick={() => setIsOpen(true)}
                             className="absolute bottom-full mb-5 right-0 whitespace-nowrap bg-white border-2 border-[#C5A059] text-gray-900 text-sm px-5 py-3 rounded-xl shadow-2xl font-bold z-[100] cursor-pointer hover:scale-105 transition-transform"
                         >
-                            Votre Concierge Privé ✨
+                            Votre Concierge Privé
 
                             {/* CSS Tooltip Arrow (Pointer) */}
                             {/* Outer Gold Triangle (Border) */}
