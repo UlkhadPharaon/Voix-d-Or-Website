@@ -90,15 +90,33 @@ Ce script permet de tout faire sur la page Facebook. Il intègre le nettoyage du
 import os
 import argparse
 import requests
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")
 PAGE_ID = os.getenv("FB_PAGE_ID")
+REPLIED_COMMENTS_FILE = "replied_comments.json"
 
 def clean_text(text):
     # Nettoyage des erreurs fréquentes des LLMs
     return text.replace('\\n', '\n').strip('\"\'')
+
+def load_replied_comments():
+    if os.path.exists(REPLIED_COMMENTS_FILE):
+        try:
+            with open(REPLIED_COMMENTS_FILE, "r") as f:
+                return json.load(f)
+        except:
+            return []
+    return []
+
+def save_replied_comment(comment_id):
+    replied = load_replied_comments()
+    if comment_id not in replied:
+        replied.append(comment_id)
+        with open(REPLIED_COMMENTS_FILE, "w") as f:
+            json.dump(replied, f)
 
 def publish_post(message):
     message = clean_text(message)
@@ -124,6 +142,8 @@ def reply_comment(comment_id, message):
     url = f"https://graph.facebook.com/v19.0/{comment_id}/comments"
     payload = {"message": message, "access_token": TOKEN}
     res = requests.post(url, data=payload)
+    if res.status_code == 200:
+        save_replied_comment(comment_id)
     print(res.status_code, res.text)
 
 def list_comments():
@@ -133,13 +153,26 @@ def list_comments():
     if res.status_code != 200:
         print(f"Error: {res.status_code} {res.text}")
         return
+        
+    replied_comments = load_replied_comments()
     data = res.json().get("data", [])
+    
     print("=== Recent Posts and Comments ===")
     for post in data:
         print(f"Post ID: {post.get('id')} | Message: {post.get('message', 'No text')}")
         for comment in post.get("comments", {}).get("data", []):
             author = comment.get("from", {}).get("name", "Unknown")
-            print(f"  -> Comment ID: {comment.get('id')} | Author: {author} | Message: {comment.get('message')}")
+            comment_id = comment.get('id')
+            
+            # Vérifier si l'agent a déjà répondu
+            if comment_id in replied_comments:
+                status = "[DÉJÀ RÉPONDU - IGNORER]"
+            elif comment.get("from", {}).get("id") == PAGE_ID:
+                status = "[COMMENTAIRE DE LA PAGE - IGNORER]"
+            else:
+                status = "[NOUVEAU - À TRAITER]"
+                
+            print(f"  -> Comment ID: {comment_id} | Author: {author} | Message: {comment.get('message')} {status}")
 
 def get_stats():
     url = f"https://graph.facebook.com/v19.0/{PAGE_ID}/insights"
