@@ -37,10 +37,41 @@ def list_unread():
         return
 
     print("=== Unread WhatsApp Messages ===")
+    has_message = False
+    
     for msg in whatsapp_messages:
-        print(json.dumps(msg.get("data")))
+        data = msg.get("data", {})
+        for entry in data.get("entry", []):
+            for change in entry.get("changes", []):
+                value = change.get("value", {})
+                
+                # Get contacts dict for name mapping
+                contacts = {}
+                for contact in value.get("contacts", []):
+                    wa_id = contact.get("wa_id")
+                    name = contact.get("profile", {}).get("name", "Unknown")
+                    contacts[wa_id] = name
+                
+                # Iterate messages
+                for message in value.get("messages", []):
+                    has_message = True
+                    sender_id = message.get("from")
+                    sender_name = contacts.get(sender_id, "Unknown")
+                    msg_type = message.get("type", "unknown")
+                    
+                    if msg_type == "text":
+                        body = message.get("text", {}).get("body", "")
+                        print(f"[Plateforme: WhatsApp] De: {sender_id} ({sender_name}) | Type: text | Message: {body}")
+                    elif msg_type == "image":
+                        image_id = message.get("image", {}).get("id", "")
+                        print(f"[Plateforme: WhatsApp] De: {sender_id} ({sender_name}) | Type: image | Media ID: {image_id} (dis-lui que tu as reçu l'image)")
+                    else:
+                        print(f"[Plateforme: WhatsApp] De: {sender_id} ({sender_name}) | Type: {msg_type}")
 
-    # GARDE-FOU INBOX : Ne conserver que les messages des autres plateformes (ex: Messenger)
+    if not has_message:
+        print("Aucun message texte ou image trouvé (uniquement des accusés de réception).")
+
+    # GARDE-FOU INBOX : Ne conserver que les messages des autres plateformes
     with open(INBOX_FILE, "w") as f:
         json.dump({"messages": other_messages}, f, indent=4)
 
