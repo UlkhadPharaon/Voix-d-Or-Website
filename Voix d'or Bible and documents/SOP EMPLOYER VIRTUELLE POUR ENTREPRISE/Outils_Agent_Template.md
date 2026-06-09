@@ -345,8 +345,22 @@ load_dotenv()
 TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")
 PAGE_ID = os.getenv("FB_PAGE_ID")
 
+GRAPH = "https://graph.facebook.com/v19.0"
+
+def _get_psid_from_conversation(conversation_id):
+    """Retourne le PSID du premier participant non-page dans la conversation."""
+    url = f"{GRAPH}/{conversation_id}"
+    params = {"fields": "participants", "access_token": TOKEN}
+    r = requests.get(url, params=params)
+    r.raise_for_status()
+    participants = r.json().get("participants", {}).get("data", [])
+    for p in participants:
+        if str(p.get("id")) != str(PAGE_ID):
+            return p.get("id")
+    return None
+
 def list_conversations():
-    url = f"https://graph.facebook.com/v19.0/{PAGE_ID}/conversations"
+    url = f"{GRAPH}/{PAGE_ID}/conversations"
     params = {
         "fields": "id,unread_count,updated_time,participants",
         "access_token": TOKEN
@@ -366,12 +380,12 @@ def list_conversations():
     print("=== Unread Conversations ===")
     for c in unread_convos:
         participants = c.get("participants", {}).get("data", [])
-        users = [p.get("name", "Unknown") for p in participants if p.get("id") != PAGE_ID]
+        users = [p.get("name", "Unknown") for p in participants if str(p.get("id")) != str(PAGE_ID)]
         user_names = ", ".join(users) if users else "Unknown User"
         print(f"Conversation ID: {c.get('id')} | Unread: {c.get('unread_count')} | User: {user_names} | Updated: {c.get('updated_time')}")
 
 def read_conversation(conversation_id):
-    url = f"https://graph.facebook.com/v19.0/{conversation_id}/messages"
+    url = f"{GRAPH}/{conversation_id}/messages"
     params = {
         "fields": "message,from,created_time",
         "access_token": TOKEN,
@@ -395,12 +409,20 @@ def read_conversation(conversation_id):
 
 def reply(conversation_id, message):
     message = message.replace('\\n', '\n').strip('\"\'')
-    url = f"https://graph.facebook.com/v19.0/{conversation_id}/messages"
-    params = {"access_token": TOKEN}
-    payload = {"message": message}
-    res = requests.post(url, params=params, json=payload)
+    psid = _get_psid_from_conversation(conversation_id)
+    if not psid:
+        print(f"Error: PSID introuvable pour la conversation {conversation_id}")
+        return
+
+    url = f"{GRAPH}/me/messages"
+    payload = {
+        "messaging_product": "messenger",
+        "recipient": {"id": psid},
+        "message": {"text": message},
+    }
+    res = requests.post(url, params={"access_token": TOKEN}, json=payload)
     if res.status_code == 200:
-        print(f"Reply sent successfully to conversation {conversation_id}")
+        print(f"Reply sent successfully to PSID {psid} (conversation {conversation_id})")
     else:
         print(f"Error sending reply: {res.status_code} {res.text}")
 
@@ -423,10 +445,6 @@ if __name__ == "__main__":
             reply(args.conversation_id, args.message)
         else:
             print("Missing --conversation_id or --message")
-```
-
----
-
 ## 6. `cm_studio_bot.py` (WEBHOOK EVENT-DRIVEN)
 Ce script remplace l'ancienne approche par Cronjob. Il utilise FastAPI pour recevoir les Webhooks de Meta (WhatsApp et Facebook) et déclenche l'agent Hermes de manière asynchrone (en arrière-plan) pour qu'il traite les messages instantanément. Il inclut un système de verrou (Lock) pour empêcher le déclenchement de multiples instances de l'agent en même temps (anti-spam).
 
@@ -442,6 +460,13 @@ app = FastAPI()
 
 INBOX_FILE = "inbox.json"
 LOCK_FILE = "agent_running.lock"
+
+# Clear stale lock if server restarts
+if os.path.exists(LOCK_FILE):
+    try:
+        os.remove(LOCK_FILE)
+    except:
+        pass
 
 def save_to_inbox(data, platform):
     if not os.path.exists(INBOX_FILE):
@@ -460,30 +485,37 @@ def save_to_inbox(data, platform):
         json.dump(inbox, f, indent=4)
 
 async def trigger_agent(platform):
-    """Trigger the Hermes agent if not already running."""
     if os.path.exists(LOCK_FILE):
-        # Agent is already processing a batch
         return
         
     try:
-        # Create lock
+        # Créer le verrou
         open(LOCK_FILE, 'w').close()
         
+        # Définir le prompt
         prompt = f"TRIGGER SYSTEM : Nouveaux événements reçus sur {platform}. Utilise tes outils (whatsapp_manager, messenger_manager, ou facebook_manager) pour lister les messages non lus ou les commentaires et y répondre immédiatement. N'oublie pas de vérifier à la fois WhatsApp et Messenger s'il y a du nouveau."
         
-        # Run agent in background
-        cmd = ["hermes", "--profile", "vo_community_manager", "chat", "--prompt", prompt]
-        process = await asyncio.create_subprocess_exec(
-            *cmd,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
-        )
+        # Absolute path to hermes to avoid PATH issues in background tasks
+        cmd = ["/usr/local/lib/hermes-agent/venv/bin/hermes", "--profile", "vo_community_manager", "chat", "-q", prompt]
         
-        # Wait for the agent to finish its run
-        await process.communicate()
-        
+        try:
+            process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE
+            )
+            
+            stdout, stderr = await process.communicate()
+            
+            # Log the output
+            with open("agent_runs.log", "a", encoding="utf-8") as f:
+                f.write(f"--- RUN {platform} ---\nSTDOUT: {stdout.decode(errors='ignore')}\nSTDERR: {stderr.decode(errors='ignore')}\n\n")
+        except Exception as e:
+            with open("agent_runs.log", "a", encoding="utf-8") as f:
+                f.write(f"--- FAILED TO RUN {platform} ---\nERROR: {str(e)}\n\n")
+            
     finally:
-        # Release lock
+        # Toujours retirer le verrou
         if os.path.exists(LOCK_FILE):
             os.remove(LOCK_FILE)
 
@@ -500,14 +532,43 @@ async def verify_webhook(request: Request):
 async def receive_webhook(request: Request, background_tasks: BackgroundTasks):
     body = await request.json()
     platform = "unknown"
+    
     if body.get("object") == "whatsapp_business_account":
+        # SECURITE ANTI-BOUCLE : Ignorer les Webhooks qui ne contiennent que des "statuses" (accusés de réception)
+        is_just_status = True
+        for entry in body.get("entry", []):
+            for change in entry.get("changes", []):
+                value = change.get("value", {})
+                if "messages" in value:
+                    is_just_status = False
+                    break
+        
+        if is_just_status:
+            return {"status": "ignored_status_update"}
+            
         save_to_inbox(body, "whatsapp")
         platform = "WhatsApp"
+        
     elif body.get("object") == "page":
+        # SECURITE ANTI-BOUCLE FACEBOOK : Ignorer les commentaires postés par la page elle-même
+        is_own_comment = False
+        PAGE_ID = os.getenv("FB_PAGE_ID")
+        for entry in body.get("entry", []):
+            for change in entry.get("changes", []):
+                value = change.get("value", {})
+                from_obj = value.get("from", {})
+                if from_obj.get("id") == PAGE_ID:
+                    is_own_comment = True
+                    break
+                    
+        if is_own_comment:
+            return {"status": "ignored_own_comment"}
+            
         save_to_inbox(body, "facebook")
         platform = "Facebook/Messenger"
     else:
         save_to_inbox(body, "unknown")
+        return {"status": "unknown"}
         
     # Trigger the agent asynchronously
     background_tasks.add_task(trigger_agent, platform)
@@ -515,8 +576,5 @@ async def receive_webhook(request: Request, background_tasks: BackgroundTasks):
 
 if __name__ == "__main__":
     import uvicorn
-    # Clear stale lock if server restarted
-    if os.path.exists(LOCK_FILE):
-        os.remove(LOCK_FILE)
     uvicorn.run(app, host="0.0.0.0", port=5000)
 ```
