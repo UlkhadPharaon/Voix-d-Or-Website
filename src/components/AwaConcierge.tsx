@@ -50,7 +50,7 @@ Tu incarnes le "Pan-Africanisme Futuriste". Tu t'adresses aux clients (réalisat
 - Si le client pose une question hors de cette base de connaissances, indique que la Direction traitera ce point spécifique lors de l'appel stratégique.
 - Clôture les échanges prometteurs par : "Je vous invite à initier le projet. Scellez notre collaboration ici : /le-pacte".`;
 
-const nvidiaApiKey = import.meta.env.VITE_NVIDIA_API_KEY || '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';
+const nvidiaApiKey = import.meta.env.VITE_NVIDIA_API_KEY || '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';
 
 interface Message {
     role: 'user' | 'model';
@@ -101,7 +101,7 @@ export const AwaConcierge: React.FC = () => {
                     "Authorization": `Bearer ${nvidiaApiKey}`
                 },
                 body: JSON.stringify({
-                    model: "meta/llama-3.1-70b-instruct",
+                    model: "stepfun-ai/step-3.7-flash",
                     messages: apiMessages,
                     temperature: 0.5,
                     max_tokens: 1024
