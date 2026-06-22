@@ -39,7 +39,7 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-white font-monument uppercase tracking-widest mb-6 text-xs">Contact</h3>
                         <p>Avenue des comores, Somgandé<br />Ouagadougou, Burkina Faso</p>
-                        <p className="mt-4 hover:text-champagne-gold transition-colors cursor-pointer">+226 44-90-66-29</p>
+                        <p className="mt-4 hover:text-champagne-gold transition-colors cursor-pointer">+226 57-26-59-15</p>
                         <p className="mt-2 hover:text-champagne-gold transition-colors cursor-pointer">studiovoixdorofficiel@gmail.com</p>
                     </div>
                 </div>
