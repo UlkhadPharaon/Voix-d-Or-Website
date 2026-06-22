@@ -109,9 +109,9 @@ export const AwaConcierge: React.FC = () => {
             });
 
             if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                console.error("NVIDIA API error response:", errorData);
-                throw new Error(`NVIDIA API response error: ${response.statusText}`);
+                const errorText = await response.text().catch(() => "Could not read error body");
+                console.error("NVIDIA API error response:", errorText);
+                throw new Error(`${response.status} ${response.statusText} - ${errorText}`);
             }
 
             const data = await response.json();

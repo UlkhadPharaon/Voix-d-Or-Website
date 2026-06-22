@@ -1,0 +1,357 @@
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║          STUDIO VOIX D'OR — PACK DE SYSTEM PROMPTS GPT IMAGE 2                ║
+║                    Ouagadougou, Burkina Faso                                   ║
+║              "Savoir Rêver Grand et l'accomplir"                               ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  BLOC IDENTITÉ UNIVERSEL — À COLLER EN TÊTE DE CHAQUE PROMPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BRAND IDENTITY BLOCK — Studio Voix d'Or
+Studio: Studio Voix d'Or · Premium production studio · Ouagadougou, Burkina Faso
+Tagline: "Savoir Rêver Grand et l'accomplir"
+Logo: Gold circular "V" emblem + brand name in black
+Brand colors: Gold #F5A800 · Dark navy #0A1F5C · White
+Tone: Imperial confidence · African cultural pride · No Western mimicry · Authentic Burkinabè identity
+Style rule: No AI glow effects · No fake cinematic filters · No heavy over-processing · Keep it real, keep it African
+Footer format: Full-width dark navy bar · Logo left · Studio name + city center · Facebook + Instagram icons right
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  RÈGLES UNIVERSELLES — LES 5 INTERDICTIONS (à appendre à chaque prompt)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+UNIVERSAL RULES — Always append to every prompt:
+1. NO heavy AI glow, fake rim lighting, or over-saturated color grades
+2. NO Western aesthetic imposition — preserve authentic African visual identity
+3. NO alteration of original composition or background elements unless explicitly requested
+4. NO clichéd "golden hour" drama or generic motivational poster aesthetics
+5. ALWAYS keep the subject's face, posture, and clothing exactly unchanged in edit mode
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CALENDRIER ÉDITORIAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  LUNDI     → 🌟 MOTIVATION & MANIFESTE DE MARQUE
+  MARDI     → 🛠️  ARSENAL TECHNIQUE (matériel, équipements)
+  MERCREDI  → 🎬 PORTFOLIO & RÉALISATION (showcase projets)
+  JEUDI     → 🎭 BEHIND THE SCENES (coulisses)
+  VENDREDI  → 🏆 TÉMOIGNAGE / RÉSULTAT CLIENT
+  SAMEDI    → 🌍 CULTURE & IDENTITÉ AFRICAINE / Tendances
+  DIMANCHE  → 💤 REPOS (rapport hebdomadaire seulement)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  LUNDI — 🌟 MOTIVATION & MANIFESTE DE MARQUE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ IMAGE TO IMAGE — EDIT ]
+─────────────────────────
+
+You are a professional graphic designer retouching a photo for Studio Voix d'Or, a premium African production studio based in Burkina Faso.
+
+TASK: Lightly retouch this photo for a Monday motivational Facebook post.
+
+PHOTO RETOUCHING (subtle only):
+— Improve exposure and contrast slightly, natural look
+— Enhance subject's presence: soft sharpening on face and hands
+— Mild warm color grade: deeper blacks, clean midtones
+— No heavy filters, no AI glow, no fake lighting
+
+GRAPHIC OVERLAY (do not alter the photo itself):
+— Top-right: Studio Voix d'Or gold "V" logo badge on a small dark pill
+— Bold white italic text, left or lower portion:
+  Line 1 (medium): "Le lundi appartient à ceux qui osent."
+  Line 2 (large, bold): "Nous, on crée."
+  Line 3 (small, gold #F5A800, italic): "— Studio Voix d'Or"
+— Footer bar (full width, dark navy): logo left · "Studio Voix d'Or · Ouagadougou" center · Facebook + Instagram icons right
+
+STYLE: Clean, honest, authentic. West African commercial advertising. No AI-generated effects. Subject must look confident and professional. 4:5 portrait ratio.
+
+
+[ TEXT TO IMAGE — GÉNÉRATION ]
+───────────────────────────────
+
+Create a bold motivational Facebook post for Studio Voix d'Or, a premium production studio in Ouagadougou, Burkina Faso.
+
+VISUAL CONCEPT:
+A confident young West African creative professional standing tall in a modern studio environment. Clean dark navy background (#0A1F5C). Warm professional lighting — subtle, not cinematic drama. Subject wears clean modern attire. Posture: proud, forward-facing, determined.
+
+GRAPHIC DESIGN:
+— Studio Voix d'Or gold "V" circular logo, top-right corner, on dark pill badge
+— Bold white italic typography, right side:
+  Large: "Le lundi appartient"
+  Larger bold: "à ceux qui osent."
+  Gold (#F5A800) italic: "Savoir Rêver Grand et l'accomplir"
+— Footer: full-width dark navy bar · logo + "Ouagadougou, Burkina Faso" · social icons
+
+STYLE: West African premium commercial photography aesthetic. No AI artifacts. No clichés. Flat clean background, studio-lit subject. Authentic Burkinabè energy. 4:5 portrait for Facebook.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  MARDI — 🛠️  ARSENAL TECHNIQUE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ IMAGE TO IMAGE — EDIT ]
+─────────────────────────
+
+You are a professional graphic designer retouching a photo for Studio Voix d'Or, a premium African production studio.
+
+TASK: Lightly retouch this equipment/gear photo for a Tuesday technical showcase post.
+
+PHOTO RETOUCHING (subtle only):
+— Boost contrast on equipment details: make textures sharp and tactile
+— Cool-neutral color grade: clean whites, deep blacks
+— Improve lighting on the gear: emphasize metallic and matte surfaces naturally
+— Remove any distracting background clutter if minimal (do not alter main composition)
+
+GRAPHIC OVERLAY:
+— Top-right: Studio Voix d'Or gold "V" logo badge
+— Bold white text, bottom portion:
+  Line 1 (small caps, spaced): "ARSENAL · STUDIO VOIX D'OR"
+  Line 2 (large bold): "L'outil forge le maître."
+  Line 3 (gold #F5A800, italic, small): "Équipements professionnels · Ouagadougou"
+— Footer bar: dark navy · logo left · "Mardi Technique" center · social icons right
+
+STYLE: Technical, precise, premium. Think high-end gear editorial. No AI glows. 4:5 portrait ratio.
+
+
+[ TEXT TO IMAGE — GÉNÉRATION ]
+───────────────────────────────
+
+Create a technical showcase Facebook post for Studio Voix d'Or, a premium production studio in Burkina Faso.
+
+VISUAL CONCEPT:
+A close-up, well-lit flat lay or hero shot of professional audio/video production equipment: microphone, camera, mixing console, or recording interface. Clean neutral background (dark gray or white). Product photography lighting — crisp, no shadows interfering. African studio context, authentic feel.
+
+GRAPHIC DESIGN:
+— Studio Voix d'Or gold "V" logo, top-right badge
+— Typography overlay, bottom-left, white:
+  Small caps spaced: "ARSENAL · STUDIO VOIX D'OR"
+  Large bold: "L'outil forge le maître."
+  Gold italic small: "Matériel professionnel · Ouagadougou"
+— Footer: dark navy bar full width · logo + social handles
+
+STYLE: Clean product photography editorial. No AI artifacts. Neutral to dark background. High-end commercial gear aesthetic. 4:5 portrait format.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  MERCREDI — 🎬 PORTFOLIO & RÉALISATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ IMAGE TO IMAGE — EDIT ]
+─────────────────────────
+
+You are a professional graphic designer retouching a project photo for Studio Voix d'Or.
+
+TASK: Lightly retouch this production/project photo for a Wednesday portfolio showcase post.
+
+PHOTO RETOUCHING (subtle only):
+— Enhance overall sharpness and clarity: the work must look crisp and professional
+— Color grade: vivid but honest — no over-saturation, no filters
+— Improve subject lighting naturally if applicable
+— Keep all original composition elements intact
+
+GRAPHIC OVERLAY:
+— Top-right: Studio Voix d'Or gold "V" logo badge on dark pill
+— Text overlay, right side, white bold:
+  Line 1 (small, spaced): "PORTFOLIO · MERCREDI CRÉATION"
+  Line 2 (large bold): "Notre travail parle."
+  Line 3 (gold #F5A800, italic): "— Une réalisation Studio Voix d'Or"
+— Optional thin gold horizontal line separator between lines 2 and 3
+— Footer: dark navy bar · logo · "Studio Voix d'Or · Réalisations" · social icons
+
+STYLE: Portfolio editorial. Clean, confident, proud. 4:5 portrait ratio. No heavy effects.
+
+
+[ TEXT TO IMAGE — GÉNÉRATION ]
+───────────────────────────────
+
+Create a portfolio showcase Facebook post for Studio Voix d'Or, a premium production studio in Ouagadougou, Burkina Faso.
+
+VISUAL CONCEPT:
+A cinematic still from a professional video production or voiceover session: recording booth, director monitor showing a colorful West African scene, or a film set with crew. Authentic Burkinabè context. Rich, saturated but realistic colors. Professional lighting on the scene.
+
+GRAPHIC DESIGN:
+— Studio Voix d'Or gold "V" logo, top-right badge
+— White bold text overlay, right or bottom:
+  Small caps: "PORTFOLIO · MERCREDI CRÉATION"
+  Large bold: "Notre travail parle."
+  Gold italic: "— Une réalisation Studio Voix d'Or"
+  Thin gold separator line between main text and tagline
+— Footer bar: dark navy · logo · "Réalisations · Ouagadougou" · social icons
+
+STYLE: Cinematic editorial. Rich authentic West African visual identity. No AI artifacts. 4:5 portrait for Facebook.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  JEUDI — 🎭 BEHIND THE SCENES (COULISSES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ IMAGE TO IMAGE — EDIT ]
+─────────────────────────
+
+You are a professional graphic designer retouching a behind-the-scenes photo for Studio Voix d'Or.
+
+TASK: Lightly retouch this BTS/coulisses photo for a Thursday behind-the-scenes post.
+
+PHOTO RETOUCHING (subtle only):
+— Improve natural exposure: the scene should feel alive and spontaneous, not staged
+— Warm, journalistic color grade: honest, documentary feel
+— Light sharpening on main subject(s)
+— Do not remove any authentic background elements — the mess, cables, and real studio life are part of the story
+
+GRAPHIC OVERLAY:
+— Top-right: Studio Voix d'Or gold "V" logo badge
+— Text overlay, bottom or left, white:
+  Line 1 (small caps spaced): "COULISSES · JEUDI BTS"
+  Line 2 (bold italic): "Derrière chaque image,"
+  Line 3 (larger bold): "un empire se construit."
+  Line 4 (gold small italic): "— Studio Voix d'Or, Ouagadougou"
+— Footer: dark navy bar · logo · "Behind the Scenes" · social icons
+
+STYLE: Authentic, warm, documentary. Behind-the-scenes energy. No over-processing. 4:5 portrait ratio.
+
+
+[ TEXT TO IMAGE — GÉNÉRATION ]
+───────────────────────────────
+
+Create a behind-the-scenes Facebook post for Studio Voix d'Or, a premium production studio in Ouagadougou, Burkina Faso.
+
+VISUAL CONCEPT:
+An authentic, candid-style behind-the-scenes moment: a West African sound engineer or director intensely focused at a workstation, headphones on, monitor screens glowing with a project timeline. Warm ambient studio lighting. Real studio environment — cables, foam panels, monitors. Journalistic, not staged.
+
+GRAPHIC DESIGN:
+— Studio Voix d'Or gold "V" logo badge, top-right
+— Text overlay, bottom-left, white:
+  Small caps spaced: "COULISSES · JEUDI BTS"
+  Bold italic: "Derrière chaque image,"
+  Large bold: "un empire se construit."
+  Gold small italic: "— Studio Voix d'Or"
+— Footer: dark navy full width · logo · "Behind the Scenes" · social handles
+
+STYLE: Warm documentary. Authentic West African creative workspace. No AI artificiality. 4:5 portrait for Facebook.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VENDREDI — 🏆 TÉMOIGNAGE / RÉSULTAT CLIENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ⚠️  REMPLACER les crochets [ ] par le vrai nom et la vraie citation avant utilisation.
+
+[ IMAGE TO IMAGE — EDIT ]
+─────────────────────────
+
+You are a professional graphic designer retouching a client or testimonial photo for Studio Voix d'Or.
+
+TASK: Lightly retouch this client/testimonial photo for a Friday results post.
+
+PHOTO RETOUCHING (subtle only):
+— Natural exposure correction, soft sharpening on subject's face
+— Confident, clean color grade: balanced, professional look
+— Preserve all authentic elements of the image
+
+GRAPHIC OVERLAY:
+— Top-right: Studio Voix d'Or gold "V" logo badge on dark pill
+— Client quote or result text, white, left or center:
+  Opening guillemet (large gold): «
+  Line 1 (italic white medium): "[REMPLACER PAR LA CITATION DU CLIENT]"
+  Closing: »
+  Below (small, gold): "— [Nom du client], [Ville/Entreprise]"
+— Result badge (optional): pill with gold background, dark text: "Projet livré ✓"
+— Footer: dark navy bar · logo · "Témoignage Client" · social icons
+
+STYLE: Trustworthy, warm, professional. 4:5 portrait ratio.
+
+
+[ TEXT TO IMAGE — GÉNÉRATION ]
+───────────────────────────────
+
+Create a client testimonial Facebook post for Studio Voix d'Or, a premium production studio in Ouagadougou, Burkina Faso.
+
+VISUAL CONCEPT:
+A warm, confident portrait of a satisfied West African business professional or creative client — smiling naturally, clean modern attire. Neutral warm background or soft blurred office setting. Professional but approachable. Authentic Burkinabè context.
+
+GRAPHIC DESIGN:
+— Studio Voix d'Or gold "V" logo badge, top-right, dark pill
+— Quote design, centered or left:
+  Large gold opening guillemet: «
+  Bold italic white: "[REMPLACER PAR CITATION CLIENT]"
+  Gold small: "— [Nom], [Ville]"
+— Gold pill badge: "Projet livré ✓"
+— Footer: dark navy bar · logo · "Témoignage Client · Vendredi" · social handles
+
+STYLE: Trustworthy, warm, professional. Authentic West African commercial feel. No AI artifacts. 4:5 portrait. Replace all bracketed content before generating.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SAMEDI — 🌍 CULTURE & IDENTITÉ AFRICAINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ IMAGE TO IMAGE — EDIT ]
+─────────────────────────
+
+You are a professional graphic designer retouching a cultural photo for Studio Voix d'Or.
+
+TASK: Lightly retouch this cultural/identity photo for a Saturday African culture post.
+
+PHOTO RETOUCHING (subtle only):
+— Enhance richness of colors: Faso Dan Fani fabrics, Bogolan patterns, and earthy tones should vibrate with depth
+— Warm, vivid but honest color grade — celebrate the natural beauty of the scene
+— Sharpen textures: fabric weaves, skin, traditional objects
+— Do not westernize or over-process — keep the authenticity
+
+GRAPHIC OVERLAY:
+— Top-right: Studio Voix d'Or gold "V" logo badge
+— Text overlay, white bold:
+  Line 1 (small caps, spaced): "CULTURE & IDENTITÉ · SAMEDI"
+  Line 2 (large bold): "L'Afrique crée depuis toujours."
+  Line 3 (gold italic): "— Fiers d'être d'ici."
+— Optional thin gold horizontal rule accent
+— Footer: dark navy bar · logo · "Burkina Faso · Culture" · social icons
+
+STYLE: Rich, vivid, culturally proud. Celebrate Burkinabè and African identity. No Western filter aesthetics. 4:5 portrait ratio.
+
+
+[ TEXT TO IMAGE — GÉNÉRATION ]
+───────────────────────────────
+
+Create a cultural identity Facebook post for Studio Voix d'Or, a premium production studio proud of its Burkinabè heritage.
+
+VISUAL CONCEPT:
+A richly composed image celebrating West African visual culture: artisan weaving Faso Dan Fani fabric, a griot storyteller performing, or a young African filmmaker holding a camera with a traditional backdrop. Vibrant natural colors — deep indigo, terracotta, ochre, forest green. Real textures: fabric weaves, laterite, carved wood. Ouagadougou or Burkinabè village setting. FESPACO film festival energy.
+
+GRAPHIC DESIGN:
+— Studio Voix d'Or gold "V" logo badge, top-right, dark pill
+— Bold white text overlay:
+  Small caps spaced: "CULTURE & IDENTITÉ · SAMEDI"
+  Large bold: "L'Afrique crée depuis toujours."
+  Gold italic: "— Fiers d'être d'ici."
+  Thin gold horizontal separator line
+— Footer: dark navy bar · logo · "Burkina Faso · Culture & Héritage" · social handles
+
+STYLE: Vivid, proud, cultural. Rich earthy African color palette. No Western aesthetic imposition. Authentic Burkinabè identity. 4:5 portrait format for Facebook.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TONALITÉ — LES 4 PILIERS FONDAMENTAUX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. IMPÉRIAL         → Assurance d'une institution qui connaît sa valeur.
+                        Pas d'hésitation, pas d'excuse. Affirmations directes.
+
+  2. POÉTIQUE         → Le Studio forge des héritages visuels.
+                        Langage qui élève, inspire, transcende.
+                        Pas de simple vente de services.
+
+  3. TECHNIQUEMENT    → Parle tech avec aspiration, jamais de jargon pompeux.
+     ASPIRATIONNEL
+
+  4. CULTURELLEMENT   → Fierté burkinabè et africaine assumée.
+     ANCRÉ               Références au FESPACO, traditions mossi,
+                         Faso Dan Fani, Bogolan.
+                         Zéro condescendance, zéro mimétisme occidental.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Studio Voix d'Or · Ouagadougou, Burkina Faso
+  "Savoir Rêver Grand et l'accomplir"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
