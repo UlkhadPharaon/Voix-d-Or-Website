@@ -94,7 +94,7 @@ export const AwaConcierge: React.FC = () => {
                 { role: 'user', content: userText }
             ];
 
-            const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+            const response = await fetch("/api/nvidia/v1/chat/completions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -118,9 +118,9 @@ export const AwaConcierge: React.FC = () => {
             const responseText = data.choices[0].message.content;
 
             setMessages(prev => [...prev, { role: 'model', text: responseText }]);
-        } catch (error) {
+        } catch (error: any) {
             console.error("Erreur avec Awa:", error);
-            setMessages(prev => [...prev, { role: 'model', text: "Désolée, je rencontre un problème de connexion. Veuillez réessayer plus tard." }]);
+            setMessages(prev => [...prev, { role: 'model', text: `Désolée, je rencontre une erreur: ${error.message || error}` }]);
         } finally {
             setIsLoading(false);
         }
@@ -165,10 +165,9 @@ export const AwaConcierge: React.FC = () => {
                                 >
                                     <div
                                         className={`max-w-[85%] p-3 text-sm leading-relaxed ${msg.role === 'user'
-                                            ? 'bg-gray-900 text-white preserve-white rounded-2xl rounded-tr-sm'
-                                            : 'bg-[#FAFAFA] border border-[#C5A059]/20 text-gray-900 rounded-2xl rounded-tl-sm shadow-sm'
+                                            ? 'bg-gray-900 !text-white rounded-2xl rounded-tr-sm'
+                                            : 'bg-[#FAFAFA] border border-[#C5A059]/20 !text-gray-900 rounded-2xl rounded-tl-sm shadow-sm'
                                             }`}
-                                        style={{ color: msg.role === 'user' ? '#ffffff' : '#111827' }}
                                     >
                                         {msg.text}
                                     </div>
